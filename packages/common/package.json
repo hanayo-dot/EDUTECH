@@ -1,0 +1,20 @@
+{
+  "name": "@edutech/common",
+  "version": "1.0.0",
+  "description": "Shared types, constants, and utilities for EduTech CMS",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "test": "tsc && node dist/test/money-date.test.js",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "decimal.js": "^10.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.0",
+    "typescript": "^5.7.3"
+  }
+}

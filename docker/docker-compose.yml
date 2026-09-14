@@ -1,0 +1,95 @@
+version: '3.8'
+
+services:
+  # ============================================================================
+  # Primary Relational Database (PostgreSQL 16)
+  # ============================================================================
+  postgres:
+    image: postgres:16-alpine
+    container_name: edutech_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${DB_NAME:-edutech_cms}
+      POSTGRES_USER: ${DB_USER:-edutech_user}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-edutech_secure_password_2026}
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "${DB_PORT:-5432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-edutech_user} -d ${DB_NAME:-edutech_cms}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - edutech_network
+
+  # ============================================================================
+  # Distributed Cache, Rate Limiter & Message Broker (Redis 7)
+  # ============================================================================
+  redis:
+    image: redis:7-alpine
+    container_name: edutech_redis
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes", "--requirepass", "${REDIS_PASSWORD:-edutech_redis_password_2026}"]
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD:-edutech_redis_password_2026}", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - edutech_network
+
+  # ============================================================================
+  # S3-Compatible Encrypted Object Storage (MinIO)
+  # ============================================================================
+  minio:
+    image: quay.io/minio/minio:latest
+    container_name: edutech_minio
+    restart: unless-stopped
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-edutech_minio_admin}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-edutech_minio_secret_2026}
+    ports:
+      - "${MINIO_API_PORT:-9000}:9000"
+      - "${MINIO_CONSOLE_PORT:-9001}:9001"
+    volumes:
+      - minio_data:/data
+    healthcheck:
+      test: ["CMD", "mc", "ready", "local"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    networks:
+      - edutech_network
+
+  # ============================================================================
+  # Local Transactional Email Testing Sandbox (Mailpit)
+  # ============================================================================
+  mailpit:
+    image: axllent/mailpit:v1.18
+    container_name: edutech_mailpit
+    restart: unless-stopped
+    ports:
+      - "${SMTP_PORT:-1025}:1025"    # SMTP Server
+      - "${MAILPIT_UI_PORT:-8025}:8025" # Web UI
+    networks:
+      - edutech_network
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+  minio_data:
+    driver: local
+
+networks:
+  edutech_network:
+    driver: bridge

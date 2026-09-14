@@ -1,0 +1,83 @@
+/**
+ * Lifecycle statuses across core domain workflows.
+ */
+export enum StudentStatus {
+  APPLICANT = 'APPLICANT',
+  ADMITTED = 'ADMITTED',
+  ACTIVE = 'ACTIVE',
+  DEFERRED = 'DEFERRED',
+  SUSPENDED = 'SUSPENDED',
+  ON_LEAVE = 'ON_LEAVE',
+  WITHDRAWN = 'WITHDRAWN',
+  DISCONTINUED = 'DISCONTINUED',
+  COMPLETED = 'COMPLETED',
+  GRADUATED = 'GRADUATED',
+  ALUMNI = 'ALUMNI',
+  DECEASED = 'DECEASED',
+}
+
+export enum EnrollmentStatus {
+  PENDING = 'PENDING',
+  APPROVED = 'APPROVED',
+  DROPPED = 'DROPPED',
+  REJECTED = 'REJECTED',
+}
+
+export enum GradeWorkflowStatus {
+  DRAFT = 'DRAFT',
+  SUBMITTED = 'SUBMITTED',
+  MODERATED = 'MODERATED',
+  APPROVED = 'APPROVED',
+  PUBLISHED = 'PUBLISHED',
+}
+
+export enum InvoiceStatus {
+  ISSUED = 'ISSUED',
+  PARTIALLY_PAID = 'PARTIALLY_PAID',
+  PAID = 'PAID',
+  CANCELLED = 'CANCELLED',
+}
+
+export enum PaymentStatus {
+  PENDING = 'PENDING',
+  SUCCESS = 'SUCCESS',
+  FAILED = 'FAILED',
+  REVERSED = 'REVERSED',
+  REFUNDED = 'REFUNDED',
+}
+
+export enum PaymentMethod {
+  MPESA = 'MPESA',
+  CARD = 'CARD',
+  BANK_TRANSFER = 'BANK_TRANSFER',
+  CASH = 'CASH',
+}
+
+export enum ClearanceStatus {
+  PENDING = 'PENDING',
+  APPROVED = 'APPROVED',
+  REJECTED = 'REJECTED',
+}
+
+export enum TicketStatus {
+  SUBMITTED = 'SUBMITTED',
+  ASSIGNED = 'ASSIGNED',
+  IN_PROGRESS = 'IN_PROGRESS',
+  WAITING_FOR_INFO = 'WAITING_FOR_INFO',
+  RESOLVED = 'RESOLVED',
+  REJECTED = 'REJECTED',
+  CLOSED = 'CLOSED',
+}
+
+export enum AttendanceStatus {
+  PRESENT = 'PRESENT',
+  ABSENT = 'ABSENT',
+  LATE = 'LATE',
+  EXCUSED = 'EXCUSED',
+}
+
+export enum AttendanceMethod {
+  LECTURER_MANUAL = 'LECTURER_MANUAL',
+  QR_CODE = 'QR_CODE',
+  EXTERNAL_API = 'EXTERNAL_API',
+}
