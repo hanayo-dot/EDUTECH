@@ -2,8 +2,8 @@
   "name": "@edutech/common",
   "version": "1.0.0",
   "description": "Shared types, constants, and utilities for EduTech CMS",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
   "scripts": {
     "build": "tsc",
     "watch": "tsc --watch",
