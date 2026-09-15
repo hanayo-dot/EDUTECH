@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { apiClient } from '@/lib/api-client';
 import { ShieldCheck, Lock, User, AlertCircle, CheckCircle2, ArrowRight } from 'lucide-react';
 
@@ -31,6 +32,9 @@ export default function LoginPage() {
       if (res.data.requiresMfa) {
         setRequiresMfa(true);
       } else {
+        if (res.data.accessToken) {
+          localStorage.setItem('accessToken', res.data.accessToken);
+        }
         setSuccessUser(res.data.user);
       }
     } catch (err: any) {
@@ -85,6 +89,14 @@ export default function LoginPage() {
               </p>
               <div className="mt-6 p-3 rounded-lg bg-slate-900/60 border border-slate-700 text-xs text-slate-300">
                 Session authenticated via secure HTTP-only cookies and Bearer token.
+              </div>
+              <div className="mt-6 flex justify-center">
+                <Link
+                  href="/curriculum"
+                  className="inline-flex items-center px-5 py-2.5 rounded-lg bg-sky-600 hover:bg-sky-500 font-semibold text-white shadow-lg transition text-sm"
+                >
+                  Enter Institutional Structure & Curriculum Portal <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
               </div>
             </div>
           ) : (

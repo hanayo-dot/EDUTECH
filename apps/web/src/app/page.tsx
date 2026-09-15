@@ -35,10 +35,16 @@ export default function HomePage() {
 
         <div className="mt-10 flex flex-wrap gap-4 justify-center">
           <Link
-            href="/login"
+            href="/curriculum"
             className="inline-flex items-center px-6 py-3 rounded-xl bg-sky-600 hover:bg-sky-500 font-semibold text-white shadow-lg transition"
           >
-            Access Institutional Portal <ArrowRight className="ml-2 w-5 h-5" />
+            Curriculum & Multi-Campus Portal <ArrowRight className="ml-2 w-5 h-5" />
+          </Link>
+          <Link
+            href="/login"
+            className="inline-flex items-center px-6 py-3 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 font-semibold text-slate-300 transition"
+          >
+            Sign In / Role Switcher
           </Link>
           <a
             href="http://localhost:4000/api/docs"
@@ -47,7 +53,7 @@ export default function HomePage() {
             className="inline-flex items-center px-6 py-3 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 font-semibold text-slate-300 transition"
           >
             <Database className="mr-2 w-5 h-5 text-sky-400" />
-            OpenAPI Documentation
+            OpenAPI Docs
           </a>
         </div>
 

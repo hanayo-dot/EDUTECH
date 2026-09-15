@@ -7,6 +7,9 @@ import { RedisModule } from './modules/redis/redis.module';
 import { RbacModule } from './modules/rbac/rbac.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { AuditModule } from './modules/audit/audit.module';
+import { OrganizationModule } from './modules/organization/organization.module';
+import { AcademicTermsModule } from './modules/academic-terms/academic-terms.module';
+import { CurriculumModule } from './modules/curriculum/curriculum.module';
 
 @Module({
   imports: [
@@ -25,6 +28,9 @@ import { AuditModule } from './modules/audit/audit.module';
     RbacModule,
     AuthModule,
     AuditModule,
+    OrganizationModule,
+    AcademicTermsModule,
+    CurriculumModule,
   ],
   providers: [
     {

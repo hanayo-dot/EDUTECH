@@ -218,7 +218,11 @@ async function main() {
   }
 
   // Create granular permissions
-  const resources = ['STUDENT', 'GRADE', 'INVOICE', 'PAYMENT', 'COURSE', 'CLEARANCE', 'AUDIT_LOG'];
+  const resources = [
+    'CAMPUS', 'FACULTY', 'DEPARTMENT', 'PROGRAM', 'COURSE', 'CURRICULUM',
+    'SEMESTER', 'TIMETABLE', 'STUDENT', 'GRADE', 'INVOICE', 'PAYMENT',
+    'CLEARANCE', 'AUDIT_LOG', 'USER', 'ROLE',
+  ];
   const actions = ['VIEW', 'CREATE', 'EDIT', 'DELETE', 'APPROVE', 'PUBLISH'];
 
   for (const res of resources) {
@@ -238,6 +242,32 @@ async function main() {
           permissionId: perm.id,
         },
       });
+
+      // Grant VIEW to Registrar, Academic Admin, Lecturer, Student
+      if (act === 'VIEW') {
+        for (const roleCode of ['REGISTRAR', 'ACADEMIC_ADMIN', 'LECTURER', 'STUDENT']) {
+          await prisma.rolePermission.create({
+            data: {
+              roleId: roleEntities[roleCode].id,
+              permissionId: perm.id,
+            },
+          });
+        }
+      }
+
+      // Grant CREATE/EDIT/DELETE on Academic & Institutional resources to Registrar and Academic Admin
+      if (['CAMPUS', 'FACULTY', 'DEPARTMENT', 'PROGRAM', 'COURSE', 'CURRICULUM', 'SEMESTER'].includes(res)) {
+        if (['CREATE', 'EDIT', 'DELETE', 'PUBLISH'].includes(act)) {
+          for (const roleCode of ['REGISTRAR', 'ACADEMIC_ADMIN']) {
+            await prisma.rolePermission.create({
+              data: {
+                roleId: roleEntities[roleCode].id,
+                permissionId: perm.id,
+              },
+            });
+          }
+        }
+      }
     }
   }
 
