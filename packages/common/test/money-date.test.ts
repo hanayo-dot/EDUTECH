@@ -5,7 +5,7 @@ import { PermissionAction, PermissionResource } from '../src/constants/permissio
 import { StudentStatus, GradeWorkflowStatus, PaymentStatus } from '../src/constants/statuses.constant';
 
 function runTests() {
-  console.log('--- Running @edutech/common Verification Tests ---');
+  console.log('--- Running @chuoms/common Verification Tests ---');
 
   // Test 1: Precision Decimal Money Arithmetic
   const amount1 = '1500.50';
@@ -59,7 +59,7 @@ function runTests() {
   }
   console.log(`✔ All 28 system roles and 13 permission actions verified`);
 
-  console.log('--- All @edutech/common tests PASSED successfully! ---');
+  console.log('--- All @chuoms/common tests PASSED successfully! ---');
 }
 
 runTests();

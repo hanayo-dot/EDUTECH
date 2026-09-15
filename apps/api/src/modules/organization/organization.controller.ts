@@ -25,7 +25,7 @@ import { RolesGuard } from '../rbac/guards/roles.guard';
 import { PermissionsGuard } from '../rbac/guards/permissions.guard';
 import { RequirePermissions } from '../../common/decorators/permissions.decorator';
 import { AuditLogAction } from '../../common/decorators/audit.decorator';
-import { PermissionAction, PermissionResource } from '@edutech/common';
+import { PermissionAction, PermissionResource } from '@chuoms/common';
 
 @ApiTags('Organization & Multi-Campus Hierarchy')
 @ApiBearerAuth('JWT')

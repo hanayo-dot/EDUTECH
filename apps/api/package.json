@@ -1,7 +1,7 @@
 {
-  "name": "@edutech/api",
+  "name": "@chuoms/api",
   "version": "1.0.0",
-  "description": "NestJS Modular Monolith API for EduTech CMS",
+  "description": "NestJS Modular Monolith API for ChuoMS",
   "private": true,
   "scripts": {
     "build": "nest build",
@@ -12,8 +12,8 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
-    "@edutech/common": "*",
-    "@edutech/database": "*",
+    "@chuoms/common": "*",
+    "@chuoms/database": "*",
     "@nestjs/common": "^10.4.15",
     "@nestjs/config": "^3.3.0",
     "@nestjs/core": "^10.4.15",

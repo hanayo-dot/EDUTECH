@@ -13,7 +13,7 @@ import { RbacService } from './rbac.service';
 import { JwtAuthGuard } from './guards/jwt-auth.guard';
 import { RolesGuard } from './guards/roles.guard';
 import { Roles } from '../../common/decorators/roles.decorator';
-import { SystemRole } from '@edutech/common';
+import { SystemRole } from '@chuoms/common';
 
 class CreateRoleDto {
   code!: string;

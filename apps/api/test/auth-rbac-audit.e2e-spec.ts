@@ -34,7 +34,7 @@ describe('Auth, RBAC & Audit E2E Integration Suite', () => {
       const res = await request(app.getHttpServer())
         .post('/api/v1/auth/login')
         .send({
-          identifier: 'admin@edutech.edu',
+          identifier: 'admin@chuoms.edu',
           password: 'Password@2026!',
         })
         .expect(200);
@@ -76,7 +76,7 @@ describe('Auth, RBAC & Audit E2E Integration Suite', () => {
       const res = await request(app.getHttpServer())
         .post('/api/v1/auth/login')
         .send({
-          identifier: 'admin@edutech.edu',
+          identifier: 'admin@chuoms.edu',
           password: 'WrongPassword!',
         })
         .expect(401);
@@ -88,7 +88,7 @@ describe('Auth, RBAC & Audit E2E Integration Suite', () => {
 
   describe('2. Account Lockout Protection', () => {
     it('should lock account after 5 consecutive failed login attempts', async () => {
-      const targetUser = 'bob.miller@student.edutech.edu';
+      const targetUser = 'bob.miller@student.chuoms.edu';
 
       // Reset Bob first to ensure clean state
       await db.user.update({
@@ -135,12 +135,12 @@ describe('Auth, RBAC & Audit E2E Integration Suite', () => {
     beforeAll(async () => {
       const studentRes = await request(app.getHttpServer())
         .post('/api/v1/auth/login')
-        .send({ identifier: 'alice.johnson@student.edutech.edu', password: 'Password@2026!' });
+        .send({ identifier: 'alice.johnson@student.chuoms.edu', password: 'Password@2026!' });
       studentToken = studentRes.body.data.accessToken;
 
       const adminRes = await request(app.getHttpServer())
         .post('/api/v1/auth/login')
-        .send({ identifier: 'admin@edutech.edu', password: 'Password@2026!' });
+        .send({ identifier: 'admin@chuoms.edu', password: 'Password@2026!' });
       adminToken = adminRes.body.data.accessToken;
     });
 
@@ -170,7 +170,7 @@ describe('Auth, RBAC & Audit E2E Integration Suite', () => {
       // Login
       const loginRes = await request(app.getHttpServer())
         .post('/api/v1/auth/login')
-        .send({ identifier: 'admin@edutech.edu', password: 'Password@2026!' })
+        .send({ identifier: 'admin@chuoms.edu', password: 'Password@2026!' })
         .expect(200);
 
       const token = loginRes.body.data.accessToken;

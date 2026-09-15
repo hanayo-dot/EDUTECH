@@ -10,7 +10,7 @@ export default function HomePage() {
             <ShieldCheck className="w-6 h-6" />
           </div>
           <div>
-            <h1 className="font-bold text-lg leading-tight">EduTech CMS</h1>
+            <h1 className="font-bold text-lg leading-tight">ChuoMS</h1>
             <p className="text-xs text-slate-400">Enterprise College Management System</p>
           </div>
         </div>
@@ -77,7 +77,7 @@ export default function HomePage() {
       </div>
 
       <footer className="border-t border-slate-800/80 px-6 py-6 text-center text-xs text-slate-500">
-        EduTech CMS &bull; Production Enterprise System &bull; PostgreSQL 16 &bull; NestJS 10 &bull; Next.js 14
+        ChuoMS &bull; Production Enterprise College Management System &bull; PostgreSQL 16 &bull; NestJS 10 &bull; Next.js 14
       </footer>
     </main>
   );

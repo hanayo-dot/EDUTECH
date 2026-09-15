@@ -1,7 +1,7 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { PassportStrategy } from '@nestjs/passport';
 import { ExtractJwt, Strategy } from 'passport-jwt';
-import { JwtPayload } from '@edutech/common';
+import { JwtPayload } from '@chuoms/common';
 import { RedisService } from '../../redis/redis.service';
 import { DatabaseService } from '../../database/database.service';
 

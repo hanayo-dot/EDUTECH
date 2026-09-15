@@ -57,7 +57,7 @@ export default function LoginPage() {
           <ShieldCheck className="w-8 h-8" />
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-white">
-          EduTech Enterprise CMS
+          ChuoMS Enterprise CMS
         </h1>
         <p className="mt-2 text-sm text-slate-400">
           Sign in to your institutional portal (Students, Faculty & Staff)
@@ -121,7 +121,7 @@ export default function LoginPage() {
                         required
                         value={identifier}
                         onChange={(e) => setIdentifier(e.target.value)}
-                        placeholder="e.g. ADM-2026-0001 or admin@edutech.edu"
+                        placeholder="e.g. ADM-2026-0001 or admin@chuoms.edu"
                         className="block w-full pl-10 pr-3 py-2.5 bg-slate-900/70 border border-slate-700 rounded-lg text-white placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition"
                       />
                     </div>
@@ -192,21 +192,21 @@ export default function LoginPage() {
             <div className="grid grid-cols-2 gap-2 text-xs">
               <button
                 type="button"
-                onClick={() => handleQuickFill('admin@edutech.edu', 'Password@2026!')}
+                onClick={() => handleQuickFill('admin@chuoms.edu', 'Password@2026!')}
                 className="p-2 rounded bg-slate-900/60 hover:bg-slate-700/60 border border-slate-700 text-slate-300 text-left transition"
               >
                 👑 <strong>Super Admin</strong>
               </button>
               <button
                 type="button"
-                onClick={() => handleQuickFill('registrar@edutech.edu', 'Password@2026!')}
+                onClick={() => handleQuickFill('registrar@chuoms.edu', 'Password@2026!')}
                 className="p-2 rounded bg-slate-900/60 hover:bg-slate-700/60 border border-slate-700 text-slate-300 text-left transition"
               >
                 📜 <strong>Registrar</strong>
               </button>
               <button
                 type="button"
-                onClick={() => handleQuickFill('dr.smith@edutech.edu', 'Password@2026!')}
+                onClick={() => handleQuickFill('dr.smith@chuoms.edu', 'Password@2026!')}
                 className="p-2 rounded bg-slate-900/60 hover:bg-slate-700/60 border border-slate-700 text-slate-300 text-left transition"
               >
                 👨‍🏫 <strong>Lecturer</strong>

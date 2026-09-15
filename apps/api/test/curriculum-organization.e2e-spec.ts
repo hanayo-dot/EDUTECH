@@ -30,19 +30,19 @@ describe('Phase 6: Institutional Structure & Curriculum Builder E2E Suite', () =
     // Login Admin
     const adminRes = await request(app.getHttpServer())
       .post('/api/v1/auth/login')
-      .send({ identifier: 'admin@edutech.edu', password: 'Password@2026!' });
+      .send({ identifier: 'admin@chuoms.edu', password: 'Password@2026!' });
     adminToken = adminRes.body.data.accessToken;
 
     // Login Registrar
     const regRes = await request(app.getHttpServer())
       .post('/api/v1/auth/login')
-      .send({ identifier: 'registrar@edutech.edu', password: 'Password@2026!' });
+      .send({ identifier: 'registrar@chuoms.edu', password: 'Password@2026!' });
     registrarToken = regRes.body.data.accessToken;
 
     // Login Student
     const studentRes = await request(app.getHttpServer())
       .post('/api/v1/auth/login')
-      .send({ identifier: 'alice.johnson@student.edutech.edu', password: 'Password@2026!' });
+      .send({ identifier: 'alice.johnson@student.chuoms.edu', password: 'Password@2026!' });
     studentToken = studentRes.body.data.accessToken;
   });
 

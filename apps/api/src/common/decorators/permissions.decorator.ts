@@ -1,5 +1,5 @@
 import { SetMetadata } from '@nestjs/common';
-import { PermissionAction, PermissionResource } from '@edutech/common';
+import { PermissionAction, PermissionResource } from '@chuoms/common';
 
 export interface RequiredPermission {
   resource: PermissionResource | string;

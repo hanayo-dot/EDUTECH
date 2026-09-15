@@ -16,7 +16,7 @@ import { LoginDto } from './dto/login.dto';
 import { VerifyMfaDto } from './dto/mfa.dto';
 import { JwtAuthGuard } from '../rbac/guards/jwt-auth.guard';
 import { CurrentUser } from '../../common/decorators/current-user.decorator';
-import { JwtPayload } from '@edutech/common';
+import { JwtPayload } from '@chuoms/common';
 
 @ApiTags('Authentication & Identity')
 @Controller('auth')

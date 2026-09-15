@@ -25,8 +25,8 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
-      "@edutech/common": ["packages/common/src"],
-      "@edutech/database": ["packages/database/src"]
+      "@chuoms/common": ["packages/common/src"],
+      "@chuoms/database": ["packages/database/src"]
     }
   }
 }

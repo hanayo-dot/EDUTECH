@@ -1,5 +1,5 @@
 {
-  "name": "@edutech/database",
+  "name": "@chuoms/database",
   "version": "1.0.0",
   "description": "Centralized database schema, Prisma client, migrations and seeds",
   "main": "dist/index.js",
@@ -15,7 +15,7 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@edutech/common": "*",
+    "@chuoms/common": "*",
     "@prisma/client": "^6.4.1",
     "argon2": "^0.41.1",
     "decimal.js": "^10.4.3"

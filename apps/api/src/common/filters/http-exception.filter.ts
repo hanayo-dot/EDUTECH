@@ -7,7 +7,7 @@ import {
   Logger,
 } from '@nestjs/common';
 import { Request, Response } from 'express';
-import { ApiErrorResponse, ApiFieldError } from '@edutech/common';
+import { ApiErrorResponse, ApiFieldError } from '@chuoms/common';
 import { randomUUID } from 'crypto';
 
 @Catch()

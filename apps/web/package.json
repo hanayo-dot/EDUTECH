@@ -1,7 +1,7 @@
 {
-  "name": "@edutech/web",
+  "name": "@chuoms/web",
   "version": "1.0.0",
-  "description": "Next.js 14 Web Portal for EduTech CMS",
+  "description": "Next.js 14 Web Portal for ChuoMS",
   "private": true,
   "scripts": {
     "dev": "next dev -p 3000",
@@ -10,7 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@edutech/common": "*",
+    "@chuoms/common": "*",
     "clsx": "^2.1.1",
     "lucide-react": "^0.475.0",
     "next": "14.2.24",

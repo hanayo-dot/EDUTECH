@@ -6,7 +6,7 @@ import {
 } from '@nestjs/common';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { ApiResponse } from '@edutech/common';
+import { ApiResponse } from '@chuoms/common';
 import { Request } from 'express';
 import { randomUUID } from 'crypto';
 

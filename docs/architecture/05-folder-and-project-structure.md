@@ -4,7 +4,7 @@
 The repository is structured as a high-velocity, modular monorepo leveraging npm workspaces, enabling shared type safety, atomic commits, and distinct separation of concerns between client and server layers.
 
 ```
-EDUTECH/
+ChuoMS/
 ├── .github/                       # CI/CD workflows (lint, test, build, security scan)
 ├── apps/
 │   ├── api/                       # NestJS Backend API (Modular Monolith)
