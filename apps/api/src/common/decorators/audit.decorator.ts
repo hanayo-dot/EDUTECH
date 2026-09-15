@@ -12,3 +12,5 @@ export const Audit = (
   resource: string,
   extractResourceId?: (req: any, res: any) => string,
 ) => SetMetadata(AUDIT_KEY, { action, resource, extractResourceId });
+
+export const AuditLogAction = Audit;

@@ -13,6 +13,13 @@ export async function apiClient<T>(
     'Content-Type': 'application/json',
   };
 
+  if (typeof window !== 'undefined') {
+    const token = localStorage.getItem('accessToken');
+    if (token) {
+      defaultHeaders['Authorization'] = `Bearer ${token}`;
+    }
+  }
+
   const response = await fetch(url, {
     ...options,
     headers: {
