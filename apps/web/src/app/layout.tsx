@@ -2,7 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'EduTech CMS — Enterprise College Management System',
+  title: 'ChuoMS — Enterprise College Management System',
   description:
     'Production-grade higher-education management platform serving multi-campus institutional operations.',
 };

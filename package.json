@@ -1,8 +1,8 @@
 {
-  "name": "edutech-cms",
+  "name": "chuoms",
   "version": "1.0.0",
   "private": true,
-  "description": "Production-ready Enterprise College Management System",
+  "description": "Production-ready Enterprise College Management System (ChuoMS)",
   "workspaces": [
     "packages/*",
     "apps/*"
@@ -11,8 +11,8 @@
     "build": "npm run --workspaces --if-present build",
     "test": "npm run --workspaces --if-present test",
     "lint": "npm run --workspaces --if-present lint",
-    "db:migrate": "npm run --workspace=@edutech/database db:migrate",
-    "db:seed": "npm run --workspace=@edutech/database db:seed",
+    "db:migrate": "npm run --workspace=@chuoms/database db:migrate",
+    "db:seed": "npm run --workspace=@chuoms/database db:seed",
     "docker:up": "docker compose -f docker/docker-compose.yml up -d",
     "docker:down": "docker compose -f docker/docker-compose.yml down",
     "docker:ps": "docker compose -f docker/docker-compose.yml ps"

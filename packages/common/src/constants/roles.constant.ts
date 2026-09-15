@@ -1,5 +1,5 @@
 /**
- * System-level standard roles for EduTech College Management System.
+ * System-level standard roles for ChuoMS College Management System.
  * Fully configurable, extensible, and cloneable per institution.
  */
 export enum SystemRole {

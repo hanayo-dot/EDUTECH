@@ -2,7 +2,7 @@ import { Injectable, CanActivate, ExecutionContext, ForbiddenException } from '@
 import { Reflector } from '@nestjs/core';
 import { PERMISSIONS_KEY, RequiredPermission } from '../../../common/decorators/permissions.decorator';
 import { DatabaseService } from '../../database/database.service';
-import { JwtPayload, SystemRole } from '@edutech/common';
+import { JwtPayload, SystemRole } from '@chuoms/common';
 
 @Injectable()
 export class PermissionsGuard implements CanActivate {

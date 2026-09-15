@@ -1,4 +1,4 @@
-# EduTech Enterprise College Management System (CMS)
+# ChuoMS — Enterprise College Management System (CMS)
 
 A production-ready, enterprise-grade College Management System designed to serve institutions with 10,000+ to 50,000+ concurrent students, faculty, and administrative staff across multi-campus hierarchies.
 

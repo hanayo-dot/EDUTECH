@@ -4,7 +4,7 @@ import * as argon2 from 'argon2';
 const prisma = new PrismaClient();
 
 async function main() {
-  console.log('🌱 Starting EduTech CMS Enterprise Database Seeding...');
+  console.log('🌱 Starting ChuoMS Enterprise Database Seeding...');
 
   // 1. Clean existing records (reverse dependency order)
   console.log('🧹 Cleaning existing records...');
@@ -283,7 +283,7 @@ async function main() {
   // Super Admin
   const adminUser = await prisma.user.create({
     data: {
-      email: 'admin@edutech.edu',
+      email: 'admin@chuoms.edu',
       username: 'admin',
       firstName: 'System',
       lastName: 'Administrator',
@@ -302,7 +302,7 @@ async function main() {
   // Registrar
   const registrarUser = await prisma.user.create({
     data: {
-      email: 'registrar@edutech.edu',
+      email: 'registrar@chuoms.edu',
       username: 'registrar',
       staffNumber: 'STF-REG-001',
       firstName: 'Margaret',
@@ -322,7 +322,7 @@ async function main() {
   // Finance Officer
   const financeUser = await prisma.user.create({
     data: {
-      email: 'finance@edutech.edu',
+      email: 'finance@chuoms.edu',
       username: 'finance',
       staffNumber: 'STF-FIN-001',
       firstName: 'Marcus',
@@ -343,7 +343,7 @@ async function main() {
   // Lecturer: Dr. Alan Smith (Computer Science)
   const lecturer1User = await prisma.user.create({
     data: {
-      email: 'dr.smith@edutech.edu',
+      email: 'dr.smith@chuoms.edu',
       username: 'dr.smith',
       staffNumber: 'STF-CS-001',
       firstName: 'Alan',
@@ -376,7 +376,7 @@ async function main() {
   // Lecturer: Dr. Grace Hopper (Software Engineering)
   const lecturer2User = await prisma.user.create({
     data: {
-      email: 'dr.grace@edutech.edu',
+      email: 'dr.grace@chuoms.edu',
       username: 'dr.grace',
       staffNumber: 'STF-SE-001',
       firstName: 'Grace',
@@ -582,7 +582,7 @@ async function main() {
   // Student 1: Alice Johnson (Active, BCS)
   const student1User = await prisma.user.create({
     data: {
-      email: 'alice.johnson@student.edutech.edu',
+      email: 'alice.johnson@student.chuoms.edu',
       username: 'alice.johnson',
       admissionNumber: 'ADM-2026-0001',
       firstName: 'Alice',
@@ -617,7 +617,7 @@ async function main() {
   // Student 2: Bob Miller (Active, BCS)
   const student2User = await prisma.user.create({
     data: {
-      email: 'bob.miller@student.edutech.edu',
+      email: 'bob.miller@student.chuoms.edu',
       username: 'bob.miller',
       admissionNumber: 'ADM-2026-0002',
       firstName: 'Bob',
@@ -652,7 +652,7 @@ async function main() {
   // Student 3: Clara Oswald (Graduated / Alumni)
   const student3User = await prisma.user.create({
     data: {
-      email: 'clara.oswald@student.edutech.edu',
+      email: 'clara.oswald@student.chuoms.edu',
       username: 'clara.oswald',
       admissionNumber: 'ADM-2022-0042',
       firstName: 'Clara',
@@ -939,11 +939,11 @@ async function main() {
       resourceId: institution.id,
       newValues: { code: 'AITM', campuses: ['MAIN', 'NORTH'] },
       ipAddress: '127.0.0.1',
-      userAgent: 'EduTech Database Seeder v1.0',
+      userAgent: 'ChuoMS Database Seeder v1.0',
     },
   });
 
-  console.log('✅ EduTech CMS Database Seeding Completed Successfully!');
+  console.log('✅ ChuoMS Database Seeding Completed Successfully!');
 }
 
 main()

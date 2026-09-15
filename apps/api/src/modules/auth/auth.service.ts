@@ -12,7 +12,7 @@ import { LoginDto } from './dto/login.dto';
 import * as argon2 from 'argon2';
 import { authenticator } from 'otplib';
 import * as QRCode from 'qrcode';
-import { JwtPayload, ScopeType, SystemRole } from '@edutech/common';
+import { JwtPayload, ScopeType, SystemRole } from '@chuoms/common';
 import { randomUUID, createHash } from 'crypto';
 
 @Injectable()
@@ -254,7 +254,7 @@ export class AuthService {
     const secret = authenticator.generateSecret();
     const otpAuthUrl = authenticator.keyuri(
       user.email,
-      'EduTech Institutional CMS',
+      'ChuoMS Institutional CMS',
       secret,
     );
     const qrCodeDataUrl = await QRCode.toDataURL(otpAuthUrl);

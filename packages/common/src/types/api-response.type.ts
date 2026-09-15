@@ -1,5 +1,5 @@
 /**
- * Standard API request and response envelopes for EduTech CMS.
+ * Standard API request and response envelopes for ChuoMS.
  */
 
 export interface PaginationMeta {

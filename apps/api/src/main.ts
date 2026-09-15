@@ -58,7 +58,7 @@ async function bootstrap() {
 
   // 6. OpenAPI / Swagger Documentation
   const config = new DocumentBuilder()
-    .setTitle('EduTech Enterprise College Management System API')
+    .setTitle('ChuoMS Enterprise College Management System API')
     .setDescription(
       'High-concurrency, modular, enterprise REST API for higher-education institutional operations.',
     )
@@ -82,7 +82,7 @@ async function bootstrap() {
 
   const port = Number(process.env.APP_PORT) || 4000;
   await app.listen(port);
-  logger.log(`🚀 EduTech CMS API Server running at: http://localhost:${port}/api/v1`);
+  logger.log(`🚀 ChuoMS API Server running at: http://localhost:${port}/api/v1`);
   logger.log(`📚 OpenAPI / Swagger Documentation available at: http://localhost:${port}/api/docs`);
 }
 

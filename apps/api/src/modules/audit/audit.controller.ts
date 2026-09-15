@@ -4,7 +4,7 @@ import { AuditService } from './audit.service';
 import { JwtAuthGuard } from '../rbac/guards/jwt-auth.guard';
 import { RolesGuard } from '../rbac/guards/roles.guard';
 import { Roles } from '../../common/decorators/roles.decorator';
-import { SystemRole } from '@edutech/common';
+import { SystemRole } from '@chuoms/common';
 
 @ApiTags('Audit & Compliance')
 @ApiBearerAuth()

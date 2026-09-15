@@ -10,7 +10,7 @@ import { tap } from 'rxjs/operators';
 import { AuditService } from './audit.service';
 import { AUDIT_KEY, AuditMetadata } from '../../common/decorators/audit.decorator';
 import { Request } from 'express';
-import { JwtPayload } from '@edutech/common';
+import { JwtPayload } from '@chuoms/common';
 
 @Injectable()
 export class AuditInterceptor implements NestInterceptor {

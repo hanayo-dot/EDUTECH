@@ -7,7 +7,7 @@
     "^.+\\.(t|j)s$": "ts-jest"
   },
   "moduleNameMapper": {
-    "^@edutech/common$": "<rootDir>/../../../packages/common/src",
-    "^@edutech/database$": "<rootDir>/../../../packages/database/src"
+    "^@chuoms/common$": "<rootDir>/../../../packages/common/src",
+    "^@chuoms/database$": "<rootDir>/../../../packages/database/src"
   }
 }
