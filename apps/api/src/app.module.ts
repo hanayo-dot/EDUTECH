@@ -11,6 +11,7 @@ import { OrganizationModule } from './modules/organization/organization.module';
 import { AcademicTermsModule } from './modules/academic-terms/academic-terms.module';
 import { CurriculumModule } from './modules/curriculum/curriculum.module';
 import { AdmissionsModule } from './modules/admissions/admissions.module';
+import { RegistrationModule } from './modules/registration/registration.module';
 
 @Module({
   imports: [
@@ -33,6 +34,7 @@ import { AdmissionsModule } from './modules/admissions/admissions.module';
     AcademicTermsModule,
     CurriculumModule,
     AdmissionsModule,
+    RegistrationModule,
   ],
   providers: [
     {

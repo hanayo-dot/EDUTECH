@@ -26,6 +26,7 @@ export default function Sidebar({ currentTab = 'attendance', onSelectTab }: Side
 
   const navItems = [
     { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard, href: '/' },
+    { id: 'registration', label: 'Course Registration', icon: Clock, href: '/registration' },
     { id: 'admissions', label: 'Admissions & Applicants', icon: GraduationCap, href: '/admissions' },
     { id: 'curriculum', label: 'Courses & Curriculum', icon: BookOpen, href: '/curriculum' },
     { id: 'calendar', label: 'Calendar', icon: Calendar, href: '/curriculum?tab=calendar' },
@@ -68,7 +69,8 @@ export default function Sidebar({ currentTab = 'attendance', onSelectTab }: Side
             const isAttendance = item.id === 'attendance' && (pathname === '/' || pathname === '/attendance');
             const isCurriculum = item.id === 'curriculum' && pathname === '/curriculum';
             const isAdmissions = item.id === 'admissions' && pathname?.startsWith('/admissions');
-            const isActive = isAttendance || isCurriculum || isAdmissions || (item.id === currentTab);
+            const isRegistration = item.id === 'registration' && pathname?.startsWith('/registration');
+            const isActive = isAttendance || isCurriculum || isAdmissions || isRegistration || (item.id === currentTab);
 
             return (
               <Link
