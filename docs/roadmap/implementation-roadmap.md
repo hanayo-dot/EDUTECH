@@ -42,7 +42,7 @@ The implementation follows a disciplined, incremental engineering methodology wh
   • Financial & academic holds, pessimistic row locks on section capacity
      │
      ▼
-[Phase 9: Timetabling & Attendance Engine]
+[Phase 9: Timetabling & Attendance Engine] ─────────── (COMPLETED)
   • Conflict detection (lecturer, room, cohort), schedule publishing
   • Lecturer attendance marking & time-limited dynamic QR code check-in
      │
