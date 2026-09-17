@@ -27,11 +27,11 @@ export default function Sidebar({ currentTab = 'attendance', onSelectTab }: Side
   const navItems = [
     { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard, href: '/' },
     { id: 'registration', label: 'Course Registration', icon: Clock, href: '/registration' },
+    { id: 'timetable', label: 'Academic Timetable', icon: Calendar, href: '/timetable' },
+    { id: 'attendance', label: 'Attendance & QR', icon: UserCheck, href: '/attendance' },
     { id: 'admissions', label: 'Admissions & Applicants', icon: GraduationCap, href: '/admissions' },
     { id: 'curriculum', label: 'Courses & Curriculum', icon: BookOpen, href: '/curriculum' },
-    { id: 'calendar', label: 'Calendar', icon: Calendar, href: '/curriculum?tab=calendar' },
     { id: 'messages', label: 'Messages', icon: MessageSquare, href: '#' },
-    { id: 'attendance', label: 'Attendance', icon: UserCheck, href: '/' },
     { id: 'reports', label: 'Reports & Analytics', icon: BarChart3, href: '#' },
     { id: 'settings', label: 'Institutional Admin & Roles', icon: Settings, href: '/login' },
   ];
@@ -66,11 +66,13 @@ export default function Sidebar({ currentTab = 'attendance', onSelectTab }: Side
         <nav className="flex flex-col items-center space-y-4">
           {navItems.map((item) => {
             const Icon = item.icon;
-            const isAttendance = item.id === 'attendance' && (pathname === '/' || pathname === '/attendance');
+            const isAttendance = item.id === 'attendance' && (pathname === '/attendance');
+            const isTimetable = item.id === 'timetable' && pathname?.startsWith('/timetable');
             const isCurriculum = item.id === 'curriculum' && pathname === '/curriculum';
             const isAdmissions = item.id === 'admissions' && pathname?.startsWith('/admissions');
             const isRegistration = item.id === 'registration' && pathname?.startsWith('/registration');
-            const isActive = isAttendance || isCurriculum || isAdmissions || isRegistration || (item.id === currentTab);
+            const isDashboard = item.id === 'dashboard' && pathname === '/';
+            const isActive = isAttendance || isTimetable || isCurriculum || isAdmissions || isRegistration || isDashboard || (item.id === currentTab);
 
             return (
               <Link
