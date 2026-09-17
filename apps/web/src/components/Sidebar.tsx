@@ -14,6 +14,7 @@ import {
   Settings,
   ShieldCheck,
   GraduationCap,
+  Award,
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -29,6 +30,7 @@ export default function Sidebar({ currentTab = 'attendance', onSelectTab }: Side
     { id: 'registration', label: 'Course Registration', icon: Clock, href: '/registration' },
     { id: 'timetable', label: 'Academic Timetable', icon: Calendar, href: '/timetable' },
     { id: 'attendance', label: 'Attendance & QR', icon: UserCheck, href: '/attendance' },
+    { id: 'grades', label: 'Gradebook & Progression', icon: Award, href: '/grades' },
     { id: 'admissions', label: 'Admissions & Applicants', icon: GraduationCap, href: '/admissions' },
     { id: 'curriculum', label: 'Courses & Curriculum', icon: BookOpen, href: '/curriculum' },
     { id: 'messages', label: 'Messages', icon: MessageSquare, href: '#' },
@@ -67,12 +69,13 @@ export default function Sidebar({ currentTab = 'attendance', onSelectTab }: Side
           {navItems.map((item) => {
             const Icon = item.icon;
             const isAttendance = item.id === 'attendance' && (pathname === '/attendance');
+            const isGrades = item.id === 'grades' && pathname?.startsWith('/grades');
             const isTimetable = item.id === 'timetable' && pathname?.startsWith('/timetable');
             const isCurriculum = item.id === 'curriculum' && pathname === '/curriculum';
             const isAdmissions = item.id === 'admissions' && pathname?.startsWith('/admissions');
             const isRegistration = item.id === 'registration' && pathname?.startsWith('/registration');
             const isDashboard = item.id === 'dashboard' && pathname === '/';
-            const isActive = isAttendance || isTimetable || isCurriculum || isAdmissions || isRegistration || isDashboard || (item.id === currentTab);
+            const isActive = isAttendance || isGrades || isTimetable || isCurriculum || isAdmissions || isRegistration || isDashboard || (item.id === currentTab);
 
             return (
               <Link

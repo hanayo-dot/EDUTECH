@@ -47,7 +47,7 @@ The implementation follows a disciplined, incremental engineering methodology wh
   • Lecturer attendance marking & time-limited dynamic QR code check-in
      │
      ▼
-[Phase 10: Assessments, Secure Gradebook & GPA Progression]
+[Phase 10: Assessments, Secure Gradebook & GPA Progression] ── (COMPLETED)
   • Continuous assessment & exam weightings, secure marks entry
   • Moderation & publication workflow, GPA/CGPA engine, academic standing
      │

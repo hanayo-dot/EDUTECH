@@ -654,9 +654,15 @@ model SemesterGrade {
   workflowStatus           String   @default("DRAFT") // DRAFT, SUBMITTED, MODERATED, APPROVED, PUBLISHED
   submittedBy              String?
   submittedAt              DateTime? @db.Timestamptz(6)
+  moderatedBy              String?
+  moderatedAt              DateTime? @db.Timestamptz(6)
   approvedBy               String?
   approvedAt               DateTime? @db.Timestamptz(6)
   publishedAt              DateTime? @db.Timestamptz(6)
+  remarks                  String?
+  appealStatus             String?   // PENDING, UNDER_REVIEW, APPROVED, REJECTED
+  appealReason             String?
+  appealResolution         String?
   lockVersion              Int      @default(0)
   createdAt                DateTime @default(now()) @db.Timestamptz(6)
   updatedAt                DateTime @updatedAt @db.Timestamptz(6)
