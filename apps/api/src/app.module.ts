@@ -14,6 +14,7 @@ import { AdmissionsModule } from './modules/admissions/admissions.module';
 import { RegistrationModule } from './modules/registration/registration.module';
 import { TimetablingModule } from './modules/timetabling/timetabling.module';
 import { AttendanceModule } from './modules/attendance/attendance.module';
+import { GradingModule } from './modules/grading/grading.module';
 
 @Module({
   imports: [
@@ -39,6 +40,7 @@ import { AttendanceModule } from './modules/attendance/attendance.module';
     RegistrationModule,
     TimetablingModule,
     AttendanceModule,
+    GradingModule,
   ],
   providers: [
     {

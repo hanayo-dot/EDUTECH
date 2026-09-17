@@ -81,3 +81,29 @@ export enum AttendanceMethod {
   QR_CODE = 'QR_CODE',
   EXTERNAL_API = 'EXTERNAL_API',
 }
+
+export enum AssessmentType {
+  CAT = 'CAT',
+  ASSIGNMENT = 'ASSIGNMENT',
+  QUIZ = 'QUIZ',
+  LAB = 'LAB',
+  MIDTERM = 'MIDTERM',
+  FINAL_EXAM = 'FINAL_EXAM',
+  PROJECT = 'PROJECT',
+}
+
+export enum AcademicStanding {
+  GOOD_STANDING = 'GOOD_STANDING',
+  ACADEMIC_WARNING = 'ACADEMIC_WARNING',
+  PROBATION = 'PROBATION',
+  SUSPENDED = 'SUSPENDED',
+  DISCONTINUED = 'DISCONTINUED',
+}
+
+export enum GradeAppealStatus {
+  PENDING = 'PENDING',
+  UNDER_REVIEW = 'UNDER_REVIEW',
+  APPROVED = 'APPROVED',
+  REJECTED = 'REJECTED',
+}
+
