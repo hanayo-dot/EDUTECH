@@ -1,84 +1,193 @@
+'use client';
+
+import React, { useState } from 'react';
 import Link from 'next/link';
-import { ShieldCheck, ArrowRight, GraduationCap, Users, Database } from 'lucide-react';
+import Sidebar from '../components/Sidebar';
+import Header from '../components/Header';
+import AttendanceSummaryCards from '../components/AttendanceSummaryCards';
+import AttendanceOverviewChart from '../components/AttendanceOverviewChart';
+import AttendanceRosterTable from '../components/AttendanceRosterTable';
+import MobileDevicePreview from '../components/MobileDevicePreview';
+import {
+  ShieldCheck,
+  GraduationCap,
+  Sparkles,
+  ArrowRight,
+  BookOpen,
+  UserCheck,
+  CheckCircle2,
+} from 'lucide-react';
 
 export default function HomePage() {
+  const [viewMode, setViewMode] = useState<'standard' | 'side-by-side'>('side-by-side');
+  const [dateRange, setDateRange] = useState('Today');
+  const [timeframe, setTimeframe] = useState('Last Semester');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
-    <main className="min-h-screen bg-slate-950 text-white flex flex-col justify-between">
-      <header className="border-b border-slate-800/80 px-6 py-4 flex items-center justify-between max-w-7xl mx-auto w-full">
-        <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center">
-            <ShieldCheck className="w-6 h-6" />
-          </div>
-          <div>
-            <h1 className="font-bold text-lg leading-tight">ChuoMS</h1>
-            <p className="text-xs text-slate-400">Enterprise College Management System</p>
-          </div>
+    <div className="min-h-screen bg-[#e2e8f0]/40 flex flex-col justify-between">
+      {/* Top Banner Notice for quick navigation to Curriculum & Login */}
+      <div className="bg-white/90 backdrop-blur border-b border-slate-200/80 px-4 py-2 flex items-center justify-between text-xs text-slate-600">
+        <div className="flex items-center space-x-2">
+          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+          <span className="font-semibold text-slate-800">ChuoMS Enterprise Platform</span>
+          <span className="text-slate-300">|</span>
+          <span className="text-slate-500 hidden sm:inline">Designed to serve 10,000+ to 50,000+ concurrent students & faculty</span>
         </div>
-        <Link
-          href="/login"
-          className="inline-flex items-center px-4 py-2 rounded-lg bg-sky-600 hover:bg-sky-500 text-sm font-medium text-white shadow transition"
-        >
-          Institutional Login <ArrowRight className="ml-2 w-4 h-4" />
-        </Link>
-      </header>
 
-      <div className="max-w-5xl mx-auto px-6 py-20 text-center flex-1 flex flex-col justify-center items-center">
-        <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-sky-500/10 border border-sky-500/20 text-sky-400 mb-6">
-          Serving 10,000+ to 50,000+ Users Across Multi-Campus Networks
-        </span>
-        <h2 className="text-4xl sm:text-6xl font-extrabold tracking-tight max-w-3xl leading-tight">
-          Enterprise Academic & Financial Infrastructure
-        </h2>
-        <p className="mt-6 text-lg text-slate-400 max-w-2xl leading-relaxed">
-          Production-grade, modular higher-education management platform with granular RBAC, multi-identifier authentication, precision decimal financial ledgering, and tamper-evident audit logging.
-        </p>
-
-        <div className="mt-10 flex flex-wrap gap-4 justify-center">
+        <div className="flex items-center space-x-3">
+          <Link
+            href="/admissions"
+            className="text-indigo-600 hover:text-indigo-700 font-medium inline-flex items-center"
+          >
+            <GraduationCap className="w-3.5 h-3.5 mr-1" />
+            Admissions Pipeline
+          </Link>
+          <span className="text-slate-300">|</span>
           <Link
             href="/curriculum"
-            className="inline-flex items-center px-6 py-3 rounded-xl bg-sky-600 hover:bg-sky-500 font-semibold text-white shadow-lg transition"
+            className="text-teal-600 hover:text-teal-700 font-medium inline-flex items-center"
           >
-            Curriculum & Multi-Campus Portal <ArrowRight className="ml-2 w-5 h-5" />
+            <BookOpen className="w-3.5 h-3.5 mr-1" />
+            Curriculum & Campuses
           </Link>
+          <span className="text-slate-300">|</span>
           <Link
             href="/login"
-            className="inline-flex items-center px-6 py-3 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 font-semibold text-slate-300 transition"
+            className="text-[#f43f85] hover:text-pink-600 font-medium inline-flex items-center"
           >
-            Sign In / Role Switcher
+            Role Switcher / Sign In &rarr;
           </Link>
-          <a
-            href="http://localhost:4000/api/docs"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center px-6 py-3 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 font-semibold text-slate-300 transition"
-          >
-            <Database className="mr-2 w-5 h-5 text-sky-400" />
-            OpenAPI Docs
-          </a>
-        </div>
-
-        <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 w-full text-left">
-          <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
-            <GraduationCap className="w-8 h-8 text-sky-400 mb-3" />
-            <h3 className="font-semibold text-white text-base">Complete Lifecycle</h3>
-            <p className="text-xs text-slate-400 mt-1">From online admissions to academic advising, continuous grading, clearance, and alumni network.</p>
-          </div>
-          <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
-            <Users className="w-8 h-8 text-sky-400 mb-3" />
-            <h3 className="font-semibold text-white text-base">Granular RBAC</h3>
-            <p className="text-xs text-slate-400 mt-1">28 institutional roles, 13 action primitives, and hierarchical scope constraints across physical campuses.</p>
-          </div>
-          <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
-            <ShieldCheck className="w-8 h-8 text-sky-400 mb-3" />
-            <h3 className="font-semibold text-white text-base">Auditable & Tamper-Evident</h3>
-            <p className="text-xs text-slate-400 mt-1">Append-only audit ledgering for sensitive financial transactions, grade publications, and privilege changes.</p>
-          </div>
         </div>
       </div>
 
-      <footer className="border-t border-slate-800/80 px-6 py-6 text-center text-xs text-slate-500">
-        ChuoMS &bull; Production Enterprise College Management System &bull; PostgreSQL 16 &bull; NestJS 10 &bull; Next.js 14
-      </footer>
-    </main>
+      {/* Main App Container */}
+      <main className="flex-1 flex items-center justify-center p-2 sm:p-6 lg:p-8">
+        {viewMode === 'side-by-side' ? (
+          /* ==================================================================== */
+          /* SIDE-BY-SIDE MOCKUP VIEW (EXACTLY MATCHING USER SCREENSHOT)          */
+          /* ==================================================================== */
+          <div className="w-full max-w-[1400px] flex flex-col xl:flex-row items-center justify-center gap-8 py-4">
+            {/* 1. Desktop / Tablet Card Mockup (Left Side of Screenshot) */}
+            <div className="w-full xl:w-[860px] bg-white rounded-[36px] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.12)] border border-slate-200/90 overflow-hidden flex flex-row min-h-[920px]">
+              {/* Left Vertical Sidebar */}
+              <Sidebar currentTab="attendance" />
+
+              {/* Main Content Area */}
+              <div className="flex-1 bg-[#f8fafc] flex flex-col justify-between overflow-y-auto max-h-[920px]">
+                <div>
+                  <Header
+                    title="Attendance"
+                    breadcrumb="Dashboard  /  Attendance"
+                    viewMode={viewMode}
+                    onChangeViewMode={setViewMode}
+                    onOpenMobileMenu={() => setMobileMenuOpen(true)}
+                  />
+
+                  <div className="px-4 sm:px-8 space-y-6 pb-6">
+                    {/* Attendance Summary */}
+                    <AttendanceSummaryCards
+                      dateRange={dateRange}
+                      onChangeDateRange={setDateRange}
+                    />
+
+                    {/* Attendance Overview Chart */}
+                    <AttendanceOverviewChart
+                      timeframe={timeframe}
+                      onChangeTimeframe={setTimeframe}
+                    />
+
+                    {/* Attendance Roster Table */}
+                    <AttendanceRosterTable />
+                  </div>
+                </div>
+
+                {/* Footer matching screenshot */}
+                <footer className="px-8 py-5 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-2">
+                  <div>
+                    Copyright &copy; 2026 Patentrixx &bull; ChuoMS Enterprise
+                  </div>
+                  <div className="flex items-center space-x-4 text-[11px]">
+                    <a href="#" className="hover:text-slate-600 transition">Privacy Policy</a>
+                    <a href="#" className="hover:text-slate-600 transition">Terms and conditions</a>
+                    <a href="#" className="hover:text-slate-600 transition">Contact</a>
+                  </div>
+                </footer>
+              </div>
+            </div>
+
+            {/* 2. Mobile Phone Mockup (Right Side of Screenshot) */}
+            <div className="hidden lg:flex flex-col items-center">
+              <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3">
+                Mobile Viewport Preview
+              </span>
+              <MobileDevicePreview />
+            </div>
+          </div>
+        ) : (
+          /* ==================================================================== */
+          /* STANDARD FULL RESPONSIVE VIEW                                        */
+          /* ==================================================================== */
+          <div className="w-full max-w-7xl bg-white rounded-3xl shadow-[0_15px_45px_-10px_rgba(0,0,0,0.08)] border border-slate-200/80 overflow-hidden flex flex-row min-h-[900px]">
+            {/* Sidebar */}
+            <Sidebar currentTab="attendance" />
+
+            {/* Main Content */}
+            <div className="flex-1 bg-[#f8fafc] flex flex-col justify-between overflow-y-auto">
+              <div>
+                <Header
+                  title="Attendance"
+                  breadcrumb="Dashboard  /  Attendance"
+                  viewMode={viewMode}
+                  onChangeViewMode={setViewMode}
+                  onOpenMobileMenu={() => setMobileMenuOpen(true)}
+                />
+
+                <div className="px-4 sm:px-8 space-y-6 pb-8">
+                  {/* Attendance Summary */}
+                  <AttendanceSummaryCards
+                    dateRange={dateRange}
+                    onChangeDateRange={setDateRange}
+                  />
+
+                  {/* Attendance Overview Chart */}
+                  <AttendanceOverviewChart
+                    timeframe={timeframe}
+                    onChangeTimeframe={setTimeframe}
+                  />
+
+                  {/* Attendance Roster Table */}
+                  <AttendanceRosterTable />
+                </div>
+              </div>
+
+              {/* Footer */}
+              <footer className="px-8 py-5 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-2">
+                <div>
+                  Copyright &copy; 2026 Patentrixx &bull; ChuoMS Enterprise
+                </div>
+                <div className="flex items-center space-x-4 text-[11px]">
+                  <a href="#" className="hover:text-slate-600 transition">Privacy Policy</a>
+                  <a href="#" className="hover:text-slate-600 transition">Terms and conditions</a>
+                  <a href="#" className="hover:text-slate-600 transition">Contact</a>
+                </div>
+              </footer>
+            </div>
+          </div>
+        )}
+      </main>
+
+      {/* Global Bottom Status Bar */}
+      <div className="bg-white border-t border-slate-200/80 px-6 py-3 text-center text-xs text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-2 max-w-7xl mx-auto w-full">
+        <div>
+          ChuoMS Enterprise CMS &bull; Clean Architecture &bull; Next.js 14 App Router &bull; PostgreSQL 16 &bull; NestJS 10
+        </div>
+        <div className="flex items-center space-x-4">
+          <Link href="/curriculum" className="text-teal-600 hover:underline">Curriculum Builder</Link>
+          <Link href="/login" className="text-[#f43f85] hover:underline">Institutional Login</Link>
+          <a href="http://localhost:4000/api/docs" target="_blank" rel="noreferrer" className="text-slate-600 hover:underline">API Docs</a>
+        </div>
+      </div>
+    </div>
   );
 }
