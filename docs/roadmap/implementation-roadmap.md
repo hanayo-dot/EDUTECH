@@ -32,7 +32,7 @@ The implementation follows a disciplined, incremental engineering methodology wh
   • Academic terms, course catalogue, prerequisite graph, versioned curriculum
      │
      ▼
-[Phase 7: Admissions & Matriculation Pipeline]
+[Phase 7: Admissions & Matriculation Pipeline] ──── (COMPLETED)
   • Public applicant portal, document intake, application fee invoice
   • Review committee scoring, offer letter generation with QR, matriculation engine
      │

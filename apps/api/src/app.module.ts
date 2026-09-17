@@ -10,6 +10,7 @@ import { AuditModule } from './modules/audit/audit.module';
 import { OrganizationModule } from './modules/organization/organization.module';
 import { AcademicTermsModule } from './modules/academic-terms/academic-terms.module';
 import { CurriculumModule } from './modules/curriculum/curriculum.module';
+import { AdmissionsModule } from './modules/admissions/admissions.module';
 
 @Module({
   imports: [
@@ -31,6 +32,7 @@ import { CurriculumModule } from './modules/curriculum/curriculum.module';
     OrganizationModule,
     AcademicTermsModule,
     CurriculumModule,
+    AdmissionsModule,
   ],
   providers: [
     {
