@@ -3,6 +3,7 @@
 import React, { useState, useEffect, Suspense } from 'react';
 import Link from 'next/link';
 import Sidebar from '../../components/Sidebar';
+import Header from '../../components/Header';
 import {
   Award,
   BookOpen,
@@ -379,74 +380,81 @@ function GradesContent() {
   };
 
   return (
-    <div className="flex min-h-screen bg-slate-50/50">
+    <div className="flex h-screen bg-slate-50 overflow-hidden font-sans">
       <Sidebar currentTab="grades" />
 
-      <main className="flex-1 p-6 lg:p-8 max-w-7xl mx-auto w-full">
-        {/* Header Banner */}
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between pb-6 border-b border-slate-200/80 gap-4">
-          <div>
-            <div className="flex items-center space-x-2 text-xs font-semibold uppercase tracking-wider text-[#f43f85]">
-              <Sparkles className="w-3.5 h-3.5 text-[#f43f85]" />
-              <span>Phase 10 • Academic Engine</span>
+      <div className="flex-1 flex flex-col min-w-0 overflow-y-auto">
+        <Header
+          title="Gradebook & Academic Progression"
+          breadcrumb="Academics  /  Gradebook & Progression"
+          badge="Dean Moderation Active"
+        />
+
+        <main className="flex-1 p-4 sm:p-6 lg:p-8 space-y-6 max-w-7xl mx-auto w-full">
+          {/* Header Banner */}
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between pb-4 border-b border-slate-200/80 gap-4">
+            <div>
+              <div className="flex items-center space-x-2 text-xs font-semibold uppercase tracking-wider text-royal-700">
+                <Sparkles className="w-3.5 h-3.5 text-royal-600" />
+                <span>Phase 10 • Academic Engine</span>
+              </div>
+              <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 mt-1">
+                Assessments, Secure Gradebook & GPA Progression
+              </h1>
+              <p className="text-slate-500 text-xs sm:text-sm mt-0.5">
+                Continuous assessment weighting, secure marks entry, moderation approval state machine, and automated SGPA/CGPA standing.
+              </p>
             </div>
-            <h1 className="text-2xl lg:text-3xl font-bold tracking-tight text-slate-900 mt-1">
-              Assessments, Gradebook & GPA Progression
-            </h1>
-            <p className="text-slate-500 text-sm mt-0.5">
-              Continuous assessment weighting, secure marks entry, moderation approval state machine, and automated SGPA/CGPA standing.
-            </p>
+
+            <div className="flex items-center space-x-3">
+              <button
+                onClick={() => {
+                  setActionSuccess('Grade data refreshed.');
+                  setTimeout(() => setActionSuccess(null), 3000);
+                }}
+                className="inline-flex items-center space-x-2 px-3.5 py-2 bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 rounded-xl text-xs font-medium shadow-xs transition"
+              >
+                <RefreshCw className="w-3.5 h-3.5 text-slate-500" />
+                <span>Refresh</span>
+              </button>
+              <button
+                onClick={() => setIsAssessmentModalOpen(true)}
+                disabled={gradebook.workflowStatus !== 'DRAFT'}
+                className="inline-flex items-center space-x-2 px-4 py-2 bg-royal-600 hover:bg-royal-700 text-white rounded-xl text-xs font-semibold shadow-xs transition disabled:opacity-50"
+              >
+                <Plus className="w-3.5 h-3.5" />
+                <span>Add Assessment</span>
+              </button>
+            </div>
           </div>
 
-          <div className="flex items-center space-x-3">
-            <button
-              onClick={() => {
-                setActionSuccess('Grade data refreshed.');
-                setTimeout(() => setActionSuccess(null), 3000);
-              }}
-              className="inline-flex items-center space-x-2 px-3.5 py-2 bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 rounded-xl text-xs font-medium shadow-sm transition"
-            >
-              <RefreshCw className="w-3.5 h-3.5" />
-              <span>Refresh</span>
-            </button>
-            <button
-              onClick={() => setIsAssessmentModalOpen(true)}
-              disabled={gradebook.workflowStatus !== 'DRAFT'}
-              className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-[#ec4899] to-[#f43f85] text-white rounded-xl text-xs font-semibold shadow-sm hover:opacity-95 transition disabled:opacity-50"
-            >
-              <Plus className="w-3.5 h-3.5" />
-              <span>Add Assessment</span>
-            </button>
-          </div>
-        </div>
+          {/* Notifications */}
+          {actionSuccess && (
+            <div className="mt-4 p-3.5 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-xl text-xs flex items-center justify-between">
+              <div className="flex items-center space-x-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                <span>{actionSuccess}</span>
+              </div>
+              <button onClick={() => setActionSuccess(null)} className="text-emerald-700 font-bold hover:text-emerald-900">×</button>
+            </div>
+          )}
+          {actionError && (
+            <div className="mt-4 p-3.5 bg-red-50 border border-red-200 text-red-800 rounded-xl text-xs flex items-center justify-between">
+              <div className="flex items-center space-x-2">
+                <AlertCircle className="w-4 h-4 text-red-600 flex-shrink-0" />
+                <span>{actionError}</span>
+              </div>
+              <button onClick={() => setActionError(null)} className="text-red-700 font-bold hover:text-red-900">×</button>
+            </div>
+          )}
 
-        {/* Notifications */}
-        {actionSuccess && (
-          <div className="mt-4 p-3.5 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-xl text-xs flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-              <span>{actionSuccess}</span>
-            </div>
-            <button onClick={() => setActionSuccess(null)} className="text-emerald-700 font-bold hover:text-emerald-900">×</button>
-          </div>
-        )}
-        {actionError && (
-          <div className="mt-4 p-3.5 bg-red-50 border border-red-200 text-red-800 rounded-xl text-xs flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <AlertCircle className="w-4 h-4 text-red-600 flex-shrink-0" />
-              <span>{actionError}</span>
-            </div>
-            <button onClick={() => setActionError(null)} className="text-red-700 font-bold hover:text-red-900">×</button>
-          </div>
-        )}
-
-        {/* Analytics Highlights */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-6">
-          <div className="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-sm">
-            <div className="flex items-center justify-between text-slate-400 mb-1">
-              <span className="text-xs font-medium uppercase tracking-wider text-slate-500">Course Section</span>
-              <BookOpen className="w-4 h-4 text-[#f43f85]" />
-            </div>
+          {/* Analytics Highlights */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-6">
+            <div className="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-card">
+              <div className="flex items-center justify-between text-slate-400 mb-1">
+                <span className="text-xs font-semibold uppercase tracking-wider text-slate-500">Course Section</span>
+                <BookOpen className="w-4 h-4 text-royal-600" />
+              </div>
             <div className="text-lg font-bold text-slate-900">{gradebook.courseCode}</div>
             <div className="text-xs text-slate-500 truncate">{gradebook.sectionName}</div>
           </div>
@@ -485,7 +493,7 @@ function GradesContent() {
             onClick={() => setActiveTab('gradebook')}
             className={`px-4 py-2 text-xs font-semibold rounded-t-xl transition-all ${
               activeTab === 'gradebook'
-                ? 'bg-white border-t border-l border-r border-slate-200 text-[#f43f85] shadow-sm'
+                ? 'bg-white border-t border-l border-r border-slate-200 text-royal-700 shadow-xs border-b-white'
                 : 'text-slate-500 hover:text-slate-800'
             }`}
           >
@@ -495,7 +503,7 @@ function GradesContent() {
             onClick={() => setActiveTab('moderation')}
             className={`px-4 py-2 text-xs font-semibold rounded-t-xl transition-all ${
               activeTab === 'moderation'
-                ? 'bg-white border-t border-l border-r border-slate-200 text-[#f43f85] shadow-sm'
+                ? 'bg-white border-t border-l border-r border-slate-200 text-royal-700 shadow-xs border-b-white'
                 : 'text-slate-500 hover:text-slate-800'
             }`}
           >
@@ -505,7 +513,7 @@ function GradesContent() {
             onClick={() => setActiveTab('publishing')}
             className={`px-4 py-2 text-xs font-semibold rounded-t-xl transition-all ${
               activeTab === 'publishing'
-                ? 'bg-white border-t border-l border-r border-slate-200 text-[#f43f85] shadow-sm'
+                ? 'bg-white border-t border-l border-r border-slate-200 text-royal-700 shadow-xs border-b-white'
                 : 'text-slate-500 hover:text-slate-800'
             }`}
           >
@@ -515,7 +523,7 @@ function GradesContent() {
             onClick={() => setActiveTab('student')}
             className={`px-4 py-2 text-xs font-semibold rounded-t-xl transition-all ${
               activeTab === 'student'
-                ? 'bg-white border-t border-l border-r border-slate-200 text-[#f43f85] shadow-sm'
+                ? 'bg-white border-t border-l border-r border-slate-200 text-royal-700 shadow-xs border-b-white'
                 : 'text-slate-500 hover:text-slate-800'
             }`}
           >
@@ -536,7 +544,7 @@ function GradesContent() {
               <div className="flex flex-wrap items-center gap-2">
                 {gradebook.assessments.map((a) => (
                   <div key={a.id} className="flex items-center space-x-2 px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-medium text-slate-700">
-                    <span className="w-2 h-2 rounded-full bg-[#f43f85]" />
+                    <span className="w-2 h-2 rounded-full bg-royal-600" />
                     <span>{a.name}</span>
                     <span className="text-slate-400 font-normal">({a.weightPercentage}%)</span>
                   </div>
@@ -607,7 +615,7 @@ function GradesContent() {
                                 disabled={gradebook.workflowStatus !== 'DRAFT'}
                                 value={student.assessmentScores[a.id] ?? ''}
                                 onChange={(e) => handleScoreChange(student.studentId, a.id, e.target.value)}
-                                className="w-20 px-2 py-1 border border-slate-200 rounded-lg text-xs font-mono font-medium text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#f43f85] disabled:bg-slate-50 disabled:text-slate-500"
+                                className="w-20 px-2 py-1 border border-slate-200 rounded-lg text-xs font-mono font-medium text-slate-900 focus:outline-none focus:ring-2 focus:ring-royal-500 disabled:bg-slate-50 disabled:text-slate-500"
                               />
                             </td>
                           ))}
@@ -622,7 +630,7 @@ function GradesContent() {
                             disabled={gradebook.workflowStatus !== 'DRAFT'}
                             value={student.examMarks}
                             onChange={(e) => handleExamChange(student.studentId, e.target.value)}
-                            className="w-20 px-2 py-1 border border-slate-200 rounded-lg text-xs font-mono font-medium text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#f43f85] disabled:bg-slate-50 disabled:text-slate-500"
+                            className="w-20 px-2 py-1 border border-slate-200 rounded-lg text-xs font-mono font-medium text-slate-900 focus:outline-none focus:ring-2 focus:ring-royal-500 disabled:bg-slate-50 disabled:text-slate-500"
                           />
                         </td>
                         <td className="py-3 px-4 font-mono font-bold text-slate-900">
@@ -889,7 +897,7 @@ function GradesContent() {
                     placeholder="e.g. Midterm Examination, CAT 2"
                     value={newAssessmentName}
                     onChange={(e) => setNewAssessmentName(e.target.value)}
-                    className="w-full px-3 py-2 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-[#f43f85] focus:outline-none"
+                    className="w-full px-3 py-2 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-royal-500 focus:outline-none"
                   />
                 </div>
 
@@ -899,7 +907,7 @@ function GradesContent() {
                     <select
                       value={newAssessmentType}
                       onChange={(e) => setNewAssessmentType(e.target.value)}
-                      className="w-full px-3 py-2 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-[#f43f85] focus:outline-none"
+                      className="w-full px-3 py-2 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-royal-500 focus:outline-none"
                     >
                       <option value="CAT">CAT (Test)</option>
                       <option value="ASSIGNMENT">Assignment</option>
@@ -919,7 +927,7 @@ function GradesContent() {
                       max="1000"
                       value={newMaxMarks}
                       onChange={(e) => setNewMaxMarks(parseFloat(e.target.value) || 0)}
-                      className="w-full px-3 py-2 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-[#f43f85] focus:outline-none"
+                      className="w-full px-3 py-2 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-royal-500 focus:outline-none"
                     />
                   </div>
                 </div>
@@ -933,7 +941,7 @@ function GradesContent() {
                     max="100"
                     value={newWeight}
                     onChange={(e) => setNewWeight(parseFloat(e.target.value) || 0)}
-                    className="w-full px-3 py-2 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-[#f43f85] focus:outline-none"
+                    className="w-full px-3 py-2 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-royal-500 focus:outline-none"
                   />
                 </div>
 
@@ -947,7 +955,7 @@ function GradesContent() {
                   </button>
                   <button
                     type="submit"
-                    className="px-4 py-2 bg-gradient-to-r from-[#ec4899] to-[#f43f85] text-white rounded-xl text-xs font-semibold shadow-sm hover:opacity-95 transition"
+                    className="px-4 py-2 bg-royal-600 hover:bg-royal-700 text-white rounded-xl text-xs font-semibold shadow-xs transition"
                   >
                     Save Assessment
                   </button>
@@ -1017,7 +1025,7 @@ function GradesContent() {
                     placeholder="Provide specific questions, sections, or proof supporting re-marking..."
                     value={appealReason}
                     onChange={(e) => setAppealReason(e.target.value)}
-                    className="w-full px-3 py-2 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-[#f43f85] focus:outline-none"
+                    className="w-full px-3 py-2 border border-slate-200 rounded-xl text-xs focus:ring-2 focus:ring-royal-500 focus:outline-none"
                   />
                 </div>
 
@@ -1039,7 +1047,7 @@ function GradesContent() {
                       setIsAppealModalOpen(false);
                       setActionSuccess('Grade appeal submitted successfully. Tracking ticket created.');
                     }}
-                    className="px-4 py-2 bg-[#f43f85] text-white rounded-xl text-xs font-semibold shadow-sm hover:opacity-95 transition"
+                    className="px-4 py-2 bg-royal-600 hover:bg-royal-700 text-white rounded-xl text-xs font-semibold shadow-xs transition"
                   >
                     Submit Appeal
                   </button>
@@ -1049,6 +1057,7 @@ function GradesContent() {
           </div>
         )}
       </main>
+      </div>
     </div>
   );
 }

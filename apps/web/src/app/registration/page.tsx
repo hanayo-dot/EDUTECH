@@ -520,7 +520,7 @@ function CourseRegistrationContent() {
                 />
                 <div
                   className={`h-full transition-all duration-300 ${
-                    totalProjectedCredits > 21 ? 'bg-rose-500' : 'bg-pink-500'
+                    totalProjectedCredits > 21 ? 'bg-rose-500' : 'bg-royal-600'
                   }`}
                   style={{
                     width: `${Math.min(
@@ -568,12 +568,12 @@ function CourseRegistrationContent() {
                   activeHolds.length > 0 ||
                   totalProjectedCredits > 21
                 }
-                className={`px-6 py-3 rounded-xl font-bold text-xs shadow-md transition flex items-center space-x-2 ${
+                className={`px-6 py-3 rounded-xl font-bold text-xs shadow-xs transition flex items-center space-x-2 ${
                   stagedSectionIds.length === 0 ||
                   activeHolds.length > 0 ||
                   totalProjectedCredits > 21
                     ? 'bg-slate-200 text-slate-400 cursor-not-allowed'
-                    : 'bg-[#f43f85] hover:bg-pink-600 text-white'
+                    : 'bg-royal-600 hover:bg-royal-700 text-white'
                 }`}
               >
                 <CheckCircle2 className="w-4 h-4" />
@@ -674,7 +674,7 @@ function CourseRegistrationContent() {
                   placeholder="Search code, title, section..."
                   value={searchFilter}
                   onChange={(e) => setSearchFilter(e.target.value)}
-                  className="w-full pl-9 pr-4 py-2 text-xs rounded-xl border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-[#f43f85]/30 focus:border-[#f43f85]"
+                  className="w-full pl-9 pr-4 py-2 text-xs rounded-xl border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-royal-500/30 focus:border-royal-500"
                 />
               </div>
             </div>
@@ -707,7 +707,7 @@ function CourseRegistrationContent() {
                         isAlreadyEnrolled
                           ? 'border-emerald-200 bg-emerald-50/20'
                           : isStaged
-                          ? 'border-[#f43f85] ring-2 ring-[#f43f85]/20 bg-pink-50/20'
+                          ? 'border-royal-600 ring-2 ring-royal-500/20 bg-royal-50/20'
                           : sec.isFull
                           ? 'border-slate-200 opacity-60'
                           : 'border-slate-200 hover:border-slate-300'
@@ -812,7 +812,7 @@ function CourseRegistrationContent() {
                             onClick={() => toggleSection(sec.id)}
                             className={`w-full py-2.5 rounded-xl font-bold text-xs transition flex items-center justify-center space-x-1.5 shadow-sm ${
                               isStaged
-                                ? 'bg-[#f43f85] text-white hover:bg-pink-600'
+                                ? 'bg-royal-600 text-white hover:bg-royal-700'
                                 : 'bg-slate-900 hover:bg-slate-800 text-white'
                             }`}
                           >

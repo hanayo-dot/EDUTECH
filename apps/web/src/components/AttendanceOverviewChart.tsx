@@ -73,58 +73,65 @@ export default function AttendanceOverviewChart({
   const timeOptions = ['Last Semester', 'Current Semester', 'Past Academic Year'];
 
   return (
-    <div className="bg-white rounded-3xl p-5 sm:p-6 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.06)] border border-slate-100/80 space-y-4">
+    <div className="bg-white rounded-3xl p-5 sm:p-6 shadow-card border border-slate-200/80 space-y-4">
       {/* Header with Title & Filter */}
-      <div className="flex items-center justify-between">
-        <h3 className="text-base sm:text-lg font-bold text-slate-800 tracking-tight">
-          Attendance Overview
-        </h3>
-
-        <div className="relative">
-          <button
-            onClick={() => setDropdownOpen(!dropdownOpen)}
-            className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-xl bg-teal-50/70 hover:bg-teal-100/70 border border-teal-200/80 text-teal-700 text-xs font-semibold shadow-xs transition"
-          >
-            <span>{timeframe}</span>
-            <ChevronDown className="w-3.5 h-3.5 text-teal-600" />
-          </button>
-
-          {dropdownOpen && (
-            <div className="absolute right-0 mt-1.5 w-40 bg-white rounded-xl shadow-lg border border-slate-100 py-1 z-20 text-xs">
-              {timeOptions.map((opt) => (
-                <button
-                  key={opt}
-                  onClick={() => {
-                    onChangeTimeframe?.(opt);
-                    setDropdownOpen(false);
-                  }}
-                  className={`w-full text-left px-3 py-2 transition ${
-                    opt === timeframe
-                      ? 'bg-teal-50 text-teal-700 font-semibold'
-                      : 'text-slate-600 hover:bg-slate-50'
-                  }`}
-                >
-                  {opt}
-                </button>
-              ))}
-            </div>
-          )}
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+        <div>
+          <h3 className="text-base sm:text-lg font-bold text-slate-900 tracking-tight">
+            Institutional Attendance Overview
+          </h3>
+          <p className="text-xs text-slate-500">
+            Longitudinal trend analysis tracking 75% examination compliance threshold
+          </p>
         </div>
-      </div>
 
-      {/* Legend Dots */}
-      <div className="flex items-center space-x-5 text-xs font-medium">
-        <div className="flex items-center space-x-1.5">
-          <span className="w-2.5 h-2.5 rounded-full bg-[#f43f85]" />
-          <span className="text-slate-500">Students</span>
-        </div>
-        <div className="flex items-center space-x-1.5">
-          <span className="w-2.5 h-2.5 rounded-full bg-[#14b8a6]" />
-          <span className="text-slate-500">Teachers</span>
-        </div>
-        <div className="flex items-center space-x-1.5">
-          <span className="w-2.5 h-2.5 rounded-full bg-[#1e293b]" />
-          <span className="text-slate-500">Staff</span>
+        <div className="flex items-center space-x-3">
+          {/* Legend */}
+          <div className="hidden md:flex items-center space-x-3 text-xs">
+            <span className="inline-flex items-center text-slate-600 font-medium">
+              <span className="w-2.5 h-2.5 rounded-full bg-royal-600 mr-1.5" />
+              Students
+            </span>
+            <span className="inline-flex items-center text-slate-600 font-medium">
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 mr-1.5" />
+              Faculty
+            </span>
+            <span className="inline-flex items-center text-slate-600 font-medium">
+              <span className="w-2.5 h-2.5 rounded-full bg-slate-600 mr-1.5" />
+              Staff
+            </span>
+          </div>
+
+          <div className="relative">
+            <button
+              onClick={() => setDropdownOpen(!dropdownOpen)}
+              className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-slate-50 border border-slate-200/80 text-slate-700 text-xs font-semibold shadow-xs transition"
+            >
+              <span>{timeframe}</span>
+              <ChevronDown className="w-3.5 h-3.5 text-slate-500" />
+            </button>
+
+            {dropdownOpen && (
+              <div className="absolute right-0 mt-1.5 w-44 bg-white rounded-xl shadow-elevated border border-slate-200 py-1 z-20 text-xs">
+                {timeOptions.map((opt) => (
+                  <button
+                    key={opt}
+                    onClick={() => {
+                      onChangeTimeframe?.(opt);
+                      setDropdownOpen(false);
+                    }}
+                    className={`w-full text-left px-3 py-2 transition ${
+                      opt === timeframe
+                        ? 'bg-royal-50 text-royal-700 font-semibold'
+                        : 'text-slate-600 hover:bg-slate-50'
+                    }`}
+                  >
+                    {opt}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       </div>
 
@@ -136,22 +143,22 @@ export default function AttendanceOverviewChart({
             className="w-full h-44 sm:h-52 overflow-visible"
           >
             <defs>
-              {/* Students Pink Gradient Fill */}
-              <linearGradient id="pinkGradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#f43f85" stopOpacity="0.25" />
-                <stop offset="100%" stopColor="#f43f85" stopOpacity="0.0" />
+              {/* Students Royal Blue Gradient Fill */}
+              <linearGradient id="royalGradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#2563eb" stopOpacity="0.22" />
+                <stop offset="100%" stopColor="#2563eb" stopOpacity="0.0" />
               </linearGradient>
 
-              {/* Teachers Mint Gradient Fill */}
-              <linearGradient id="mintGradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#2dd4bf" stopOpacity="0.2" />
-                <stop offset="100%" stopColor="#2dd4bf" stopOpacity="0.0" />
+              {/* Teachers Emerald Gradient Fill */}
+              <linearGradient id="emeraldGradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#10b981" stopOpacity="0.18" />
+                <stop offset="100%" stopColor="#10b981" stopOpacity="0.0" />
               </linearGradient>
 
-              {/* Staff Navy Gradient Fill */}
-              <linearGradient id="navyGradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#1e293b" stopOpacity="0.08" />
-                <stop offset="100%" stopColor="#1e293b" stopOpacity="0.0" />
+              {/* Staff Slate Gradient Fill */}
+              <linearGradient id="slateGradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#475569" stopOpacity="0.08" />
+                <stop offset="100%" stopColor="#475569" stopOpacity="0.0" />
               </linearGradient>
             </defs>
 
@@ -173,7 +180,7 @@ export default function AttendanceOverviewChart({
                     x={paddingX - 10}
                     y={y + 3.5}
                     textAnchor="end"
-                    className="text-[10px] fill-slate-300 font-sans select-none"
+                    className="text-[10px] fill-slate-400 font-sans select-none font-tabular"
                   >
                     {level}%
                   </text>
@@ -181,32 +188,44 @@ export default function AttendanceOverviewChart({
               );
             })}
 
-            {/* Layer 1: Pink Area & Line (Students) */}
-            <path d={studentArea} fill="url(#pinkGradient)" />
+            {/* 75% Exam Threshold Guideline */}
+            <line
+              x1={paddingX}
+              y1={getY(75)}
+              x2={svgWidth - paddingX}
+              y2={getY(75)}
+              stroke="#f59e0b"
+              strokeWidth="1"
+              strokeDasharray="4 4"
+              opacity="0.6"
+            />
+
+            {/* Layer 1: Royal Area & Line (Students) */}
+            <path d={studentArea} fill="url(#royalGradient)" />
             <path
               d={studentLine}
               fill="none"
-              stroke="#f43f85"
+              stroke="#2563eb"
               strokeWidth="2.5"
               strokeLinecap="round"
             />
 
-            {/* Layer 2: Mint Area & Line (Teachers) */}
-            <path d={teacherArea} fill="url(#mintGradient)" />
+            {/* Layer 2: Emerald Area & Line (Faculty) */}
+            <path d={teacherArea} fill="url(#emeraldGradient)" />
             <path
               d={teacherLine}
               fill="none"
-              stroke="#14b8a6"
+              stroke="#10b981"
               strokeWidth="2.5"
               strokeLinecap="round"
             />
 
             {/* Layer 3: Staff Line & Area */}
-            <path d={staffArea} fill="url(#navyGradient)" />
+            <path d={staffArea} fill="url(#slateGradient)" />
             <path
               d={staffLine}
               fill="none"
-              stroke="#1e293b"
+              stroke="#475569"
               strokeWidth="2"
               strokeLinecap="round"
             />
@@ -250,13 +269,13 @@ export default function AttendanceOverviewChart({
                     cx={x}
                     cy={getY(d.students)}
                     r={isHovered ? 4.5 : 2.5}
-                    className="fill-[#f43f85] transition-all"
+                    className="fill-royal-600 transition-all"
                   />
                   <circle
                     cx={x}
                     cy={getY(d.teachers)}
                     r={isHovered ? 4.5 : 2.5}
-                    className="fill-[#14b8a6] transition-all"
+                    className="fill-emerald-500 transition-all"
                   />
 
                   {/* X-axis Month Label */}
@@ -278,25 +297,25 @@ export default function AttendanceOverviewChart({
           {/* Interactive Tooltip Card */}
           {hoveredIndex !== null && (
             <div
-              className="absolute pointer-events-none -top-1 bg-slate-900/90 backdrop-blur text-white px-3 py-1.5 rounded-xl shadow-xl text-[11px] transform -translate-x-1/2 transition-all"
+              className="absolute pointer-events-none -top-1 bg-slate-900 text-white px-3 py-2 rounded-xl shadow-elevated text-[11px] transform -translate-x-1/2 transition-all border border-slate-800"
               style={{
                 left: `${(getX(hoveredIndex) / svgWidth) * 100}%`,
               }}
             >
-              <div className="font-bold text-center border-b border-slate-700/80 pb-0.5 mb-1 text-teal-300">
+              <div className="font-bold text-center border-b border-slate-800 pb-1 mb-1 text-royal-300">
                 {data[hoveredIndex].month} Attendance
               </div>
               <div className="flex items-center justify-between space-x-3">
-                <span className="text-pink-300">Students:</span>
-                <span className="font-bold">{data[hoveredIndex].students}%</span>
+                <span className="text-royal-300">Students:</span>
+                <span className="font-bold font-tabular">{data[hoveredIndex].students}%</span>
               </div>
               <div className="flex items-center justify-between space-x-3">
-                <span className="text-teal-300">Teachers:</span>
-                <span className="font-bold">{data[hoveredIndex].teachers}%</span>
+                <span className="text-emerald-300">Faculty:</span>
+                <span className="font-bold font-tabular">{data[hoveredIndex].teachers}%</span>
               </div>
               <div className="flex items-center justify-between space-x-3">
-                <span className="text-slate-300">Staff:</span>
-                <span className="font-bold">{data[hoveredIndex].staff}%</span>
+                <span className="text-slate-400">Staff:</span>
+                <span className="font-bold font-tabular">{data[hoveredIndex].staff}%</span>
               </div>
             </div>
           )}

@@ -345,7 +345,7 @@ export default function AdmissionsDashboardPage() {
             <div className="flex flex-wrap items-center gap-3">
               <Link
                 href="/admissions/apply"
-                className="px-4 py-2.5 bg-[#f43f85] hover:bg-pink-600 text-white text-sm font-semibold rounded-xl shadow-sm transition-all flex items-center space-x-2"
+                className="px-4 py-2.5 bg-royal-600 hover:bg-royal-700 text-white text-sm font-semibold rounded-xl shadow-xs transition-all flex items-center space-x-2"
               >
                 <PlusCircle className="w-4 h-4" />
                 <span>Public Application Form</span>
@@ -486,7 +486,7 @@ export default function AdmissionsDashboardPage() {
                   placeholder="Search name, app #, email..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-9 pr-4 py-2 text-xs rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#f43f85]/30 focus:border-[#f43f85]"
+                  className="w-full pl-9 pr-4 py-2 text-xs rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-royal-500/30 focus:border-royal-500"
                 />
               </div>
             </div>
@@ -522,7 +522,7 @@ export default function AdmissionsDashboardPage() {
                         <div className="mt-3">
                           <Link
                             href="/admissions/apply"
-                            className="inline-flex items-center text-[#f43f85] hover:underline font-semibold"
+                            className="inline-flex items-center text-royal-600 hover:underline font-semibold"
                           >
                             Submit a sample application &rarr;
                           </Link>
@@ -595,7 +595,7 @@ export default function AdmissionsDashboardPage() {
                               setActionSuccess(null);
                               setMatriculatedResult(null);
                             }}
-                            className="px-3 py-1.5 bg-slate-900 hover:bg-[#f43f85] text-white rounded-lg font-medium transition text-xs inline-flex items-center space-x-1"
+                            className="px-3 py-1.5 bg-slate-900 hover:bg-royal-600 text-white rounded-lg font-medium transition text-xs inline-flex items-center space-x-1"
                           >
                             <span>Review</span>
                             <ChevronRight className="w-3.5 h-3.5" />

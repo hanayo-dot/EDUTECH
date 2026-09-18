@@ -96,7 +96,7 @@ function OfferLetterContent() {
 
         <button
           onClick={handlePrint}
-          className="px-5 py-2 bg-slate-900 hover:bg-[#f43f85] text-white rounded-xl font-bold text-xs shadow-md transition flex items-center space-x-2"
+          className="px-5 py-2 bg-slate-900 hover:bg-royal-600 text-white rounded-xl font-bold text-xs shadow-sm transition flex items-center space-x-2"
         >
           <Printer className="w-4 h-4" />
           <span>Print / Save Official PDF</span>
@@ -107,7 +107,7 @@ function OfferLetterContent() {
       <div className="w-full max-w-3xl bg-white rounded-2xl shadow-xl border border-slate-300/80 p-8 sm:p-14 print:p-0 print:border-none print:shadow-none print:rounded-none relative text-slate-800 font-serif leading-relaxed">
         {/* University Header with Crest */}
         <div className="border-b-2 border-slate-800 pb-6 mb-8 text-center relative">
-          <div className="w-16 h-16 rounded-2xl bg-[#f43f85] text-white flex items-center justify-center mx-auto mb-3 shadow-md">
+          <div className="w-16 h-16 rounded-2xl bg-royal-600 text-white flex items-center justify-center mx-auto mb-3 shadow-md">
             <GraduationCap className="w-9 h-9" />
           </div>
           <h1 className="text-2xl sm:text-3xl font-extrabold uppercase tracking-wider text-slate-950 font-sans">

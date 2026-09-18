@@ -124,9 +124,9 @@ export default function PublicAdmissionsApplyPage() {
       <header className="bg-white/90 backdrop-blur border-b border-slate-200 px-6 py-4 flex items-center justify-between sticky top-0 z-30">
         <div className="flex items-center space-x-3">
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#ec4899] via-[#f43f85] to-[#38bdf8] flex items-center justify-center p-[2px]">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-royal-600 via-royal-500 to-azure-500 flex items-center justify-center p-[2px]">
               <div className="w-full h-full bg-white rounded-[10px] flex items-center justify-center">
-                <GraduationCap className="w-5 h-5 text-[#f43f85]" />
+                <GraduationCap className="w-5 h-5 text-royal-600" />
               </div>
             </div>
             <span className="font-extrabold text-slate-900 tracking-tight text-lg">
@@ -146,7 +146,7 @@ export default function PublicAdmissionsApplyPage() {
           <span className="text-slate-300">|</span>
           <Link
             href="/admissions"
-            className="text-indigo-600 hover:text-indigo-800 inline-flex items-center space-x-1"
+            className="text-royal-600 hover:text-royal-800 inline-flex items-center space-x-1"
           >
             <span>Officer Portal</span>
           </Link>
@@ -157,7 +157,7 @@ export default function PublicAdmissionsApplyPage() {
       <main className="flex-1 max-w-4xl w-full mx-auto p-4 sm:p-8">
         {step < 4 && (
           <div className="mb-8 text-center">
-            <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-pink-100 text-[#f43f85]">
+            <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-royal-50 text-royal-700 border border-royal-200">
               Fall 2026 Admissions Open
             </span>
             <h1 className="text-3xl font-extrabold text-slate-900 mt-2">
@@ -178,7 +178,7 @@ export default function PublicAdmissionsApplyPage() {
                   <div
                     className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition ${
                       step === s.num
-                        ? 'bg-[#f43f85] text-white shadow-md shadow-pink-200 ring-4 ring-pink-100'
+                        ? 'bg-royal-600 text-white shadow-xs ring-4 ring-royal-100'
                         : step > s.num
                         ? 'bg-emerald-500 text-white'
                         : 'bg-slate-200 text-slate-500'
@@ -212,7 +212,7 @@ export default function PublicAdmissionsApplyPage() {
           <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200 space-y-6">
             <div className="border-b border-slate-100 pb-4">
               <h2 className="text-lg font-bold text-slate-900 flex items-center">
-                <User className="w-5 h-5 mr-2 text-[#f43f85]" />
+                <User className="w-5 h-5 mr-2 text-royal-600" />
                 Step 1: Personal & Contact Information
               </h2>
               <p className="text-xs text-slate-500 mt-0.5">
@@ -232,7 +232,7 @@ export default function PublicAdmissionsApplyPage() {
                   placeholder="e.g. Samuel"
                   value={formData.firstName}
                   onChange={handleChange}
-                  className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#f43f85]/30 focus:border-[#f43f85]"
+                  className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-royal-500/30 focus:border-royal-500"
                 />
               </div>
 
@@ -247,7 +247,7 @@ export default function PublicAdmissionsApplyPage() {
                   placeholder="e.g. Ochieng"
                   value={formData.lastName}
                   onChange={handleChange}
-                  className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#f43f85]/30 focus:border-[#f43f85]"
+                  className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-royal-500/30 focus:border-royal-500"
                 />
               </div>
 
@@ -261,7 +261,7 @@ export default function PublicAdmissionsApplyPage() {
                   placeholder="e.g. Kiprono"
                   value={formData.middleName}
                   onChange={handleChange}
-                  className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#f43f85]/30 focus:border-[#f43f85]"
+                  className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-royal-500/30 focus:border-royal-500"
                 />
               </div>
             </div>
@@ -278,7 +278,7 @@ export default function PublicAdmissionsApplyPage() {
                   placeholder="name@example.com"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#f43f85]/30 focus:border-[#f43f85]"
+                  className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-royal-500/30 focus:border-royal-500"
                 />
               </div>
 
@@ -293,7 +293,7 @@ export default function PublicAdmissionsApplyPage() {
                   placeholder="+254 7XX XXX XXX"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#f43f85]/30 focus:border-[#f43f85]"
+                  className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-royal-500/30 focus:border-royal-500"
                 />
               </div>
             </div>
@@ -308,7 +308,7 @@ export default function PublicAdmissionsApplyPage() {
                   name="dateOfBirth"
                   value={formData.dateOfBirth}
                   onChange={handleChange}
-                  className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#f43f85]/30 focus:border-[#f43f85]"
+                  className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-royal-500/30 focus:border-royal-500"
                 />
               </div>
 
@@ -320,7 +320,7 @@ export default function PublicAdmissionsApplyPage() {
                   name="gender"
                   value={formData.gender}
                   onChange={handleChange}
-                  className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#f43f85]/30 focus:border-[#f43f85]"
+                  className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-royal-500/30 focus:border-royal-500"
                 >
                   <option value="MALE">Male</option>
                   <option value="FEMALE">Female</option>
@@ -338,7 +338,7 @@ export default function PublicAdmissionsApplyPage() {
                   placeholder="39281044"
                   value={formData.nationalId}
                   onChange={handleChange}
-                  className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#f43f85]/30 focus:border-[#f43f85]"
+                  className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-royal-500/30 focus:border-royal-500"
                 />
               </div>
             </div>
@@ -354,7 +354,7 @@ export default function PublicAdmissionsApplyPage() {
                   setError(null);
                   setStep(2);
                 }}
-                className="px-6 py-3 bg-[#f43f85] hover:bg-pink-600 text-white rounded-xl font-bold text-xs shadow-md transition flex items-center space-x-2"
+                className="px-6 py-3 bg-royal-600 hover:bg-royal-700 text-white rounded-xl font-bold text-xs shadow-xs transition flex items-center space-x-2"
               >
                 <span>Continue to Program Selection</span>
                 <ArrowRight className="w-4 h-4" />
@@ -368,7 +368,7 @@ export default function PublicAdmissionsApplyPage() {
           <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200 space-y-6">
             <div className="border-b border-slate-100 pb-4">
               <h2 className="text-lg font-bold text-slate-900 flex items-center">
-                <BookOpen className="w-5 h-5 mr-2 text-[#f43f85]" />
+                <BookOpen className="w-5 h-5 mr-2 text-royal-600" />
                 Step 2: Academic Program & Campus Preference
               </h2>
               <p className="text-xs text-slate-500 mt-0.5">
@@ -410,7 +410,7 @@ export default function PublicAdmissionsApplyPage() {
                       onClick={() => setFormData((p) => ({ ...p, programId: prog.id }))}
                       className={`p-4 rounded-2xl border-2 cursor-pointer transition flex flex-col justify-between ${
                         formData.programId === prog.id
-                          ? 'border-[#f43f85] bg-pink-50/40 shadow-sm'
+                          ? 'border-royal-600 bg-royal-50/50 shadow-xs ring-2 ring-royal-200'
                           : 'border-slate-200 hover:border-slate-300 bg-white'
                       }`}
                     >
@@ -438,7 +438,7 @@ export default function PublicAdmissionsApplyPage() {
                     name="campusId"
                     value={formData.campusId}
                     onChange={handleChange}
-                    className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#f43f85]/30 focus:border-[#f43f85]"
+                    className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-royal-500/30 focus:border-royal-500"
                   >
                     <option value="9b702c9b-7680-4c7f-87d1-d1b19de64303">
                       Main Campus - Metropolis
@@ -457,7 +457,7 @@ export default function PublicAdmissionsApplyPage() {
                     name="intakeTerm"
                     value={formData.intakeTerm}
                     onChange={handleChange}
-                    className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#f43f85]/30 focus:border-[#f43f85]"
+                    className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-royal-500/30 focus:border-royal-500"
                   >
                     <option value="FALL 2026">Fall 2026 (September)</option>
                     <option value="SPRING 2027">Spring 2027 (January)</option>
@@ -472,7 +472,7 @@ export default function PublicAdmissionsApplyPage() {
                     name="studyMode"
                     value={formData.studyMode}
                     onChange={handleChange}
-                    className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#f43f85]/30 focus:border-[#f43f85]"
+                    className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-royal-500/30 focus:border-royal-500"
                   >
                     <option value="REGULAR">Full-Time Day (Regular)</option>
                     <option value="EVENING">Evening / Executive</option>
@@ -495,7 +495,7 @@ export default function PublicAdmissionsApplyPage() {
               <button
                 type="button"
                 onClick={() => setStep(3)}
-                className="px-6 py-3 bg-[#f43f85] hover:bg-pink-600 text-white rounded-xl font-bold text-xs shadow-md transition flex items-center space-x-2"
+                className="px-6 py-3 bg-royal-600 hover:bg-royal-700 text-white rounded-xl font-bold text-xs shadow-xs transition flex items-center space-x-2"
               >
                 <span>Continue to Education & Documents</span>
                 <ArrowRight className="w-4 h-4" />
@@ -509,7 +509,7 @@ export default function PublicAdmissionsApplyPage() {
           <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200 space-y-6">
             <div className="border-b border-slate-100 pb-4">
               <h2 className="text-lg font-bold text-slate-900 flex items-center">
-                <FileText className="w-5 h-5 mr-2 text-[#f43f85]" />
+                <FileText className="w-5 h-5 mr-2 text-royal-600" />
                 Step 3: Prior Academic History & Supporting Documents
               </h2>
               <p className="text-xs text-slate-500 mt-0.5">
@@ -528,7 +528,7 @@ export default function PublicAdmissionsApplyPage() {
                   placeholder="e.g. Nairobi High School"
                   value={formData.highSchool}
                   onChange={handleChange}
-                  className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#f43f85]/30 focus:border-[#f43f85]"
+                  className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-royal-500/30 focus:border-royal-500"
                 />
               </div>
 
@@ -542,7 +542,7 @@ export default function PublicAdmissionsApplyPage() {
                   placeholder="e.g. Mean Grade A (81 Points) or GPA 3.8"
                   value={formData.meanGrade}
                   onChange={handleChange}
-                  className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#f43f85]/30 focus:border-[#f43f85]"
+                  className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-royal-500/30 focus:border-royal-500"
                 />
               </div>
             </div>
@@ -583,7 +583,7 @@ export default function PublicAdmissionsApplyPage() {
               <div className="p-4 rounded-2xl border border-slate-200 bg-slate-50/50 space-y-3">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-2">
-                    <FileText className="w-4 h-4 text-purple-600" />
+                    <FileText className="w-4 h-4 text-royal-600" />
                     <span className="font-bold text-slate-800 text-xs">
                       2. Government ID / Passport Bio Page
                     </span>
@@ -629,7 +629,7 @@ export default function PublicAdmissionsApplyPage() {
                 type="button"
                 onClick={handleSubmit}
                 disabled={submitting}
-                className="px-8 py-3 bg-[#f43f85] hover:bg-pink-600 text-white rounded-xl font-bold text-xs shadow-md transition flex items-center space-x-2"
+                className="px-8 py-3 bg-royal-600 hover:bg-royal-700 text-white rounded-xl font-bold text-xs shadow-xs transition flex items-center space-x-2"
               >
                 <span>{submitting ? 'Submitting Application...' : 'Submit Final Application'}</span>
                 <Sparkles className="w-4 h-4" />
@@ -660,7 +660,7 @@ export default function PublicAdmissionsApplyPage() {
                 <span className="text-xs font-semibold text-slate-500 uppercase">
                   Official Application Number
                 </span>
-                <span className="text-lg font-mono font-extrabold text-[#f43f85]">
+                <span className="text-lg font-mono font-extrabold text-royal-600">
                   {submittedData.applicationNumber}
                 </span>
               </div>
@@ -685,7 +685,7 @@ export default function PublicAdmissionsApplyPage() {
               </div>
             </div>
 
-            <div className="p-4 bg-indigo-50 border border-indigo-100 rounded-2xl text-xs text-indigo-900 text-left">
+            <div className="p-4 bg-royal-50 border border-royal-100 rounded-2xl text-xs text-royal-900 text-left">
               <strong>Next Steps:</strong> The Admissions Committee will review your academic transcript and eligibility. You can track real-time progress using your Application Number and Email.
             </div>
 
@@ -694,7 +694,7 @@ export default function PublicAdmissionsApplyPage() {
                 href={`/admissions/status?app=${submittedData.applicationNumber}&email=${encodeURIComponent(
                   submittedData.applicant?.email,
                 )}`}
-                className="w-full sm:w-auto px-6 py-3 bg-[#f43f85] hover:bg-pink-600 text-white font-bold rounded-xl text-xs shadow-md transition flex items-center justify-center space-x-2"
+                className="w-full sm:w-auto px-6 py-3 bg-royal-600 hover:bg-royal-700 text-white font-bold rounded-xl text-xs shadow-xs transition flex items-center justify-center space-x-2"
               >
                 <span>Track Application Real-Time</span>
                 <ArrowRight className="w-4 h-4" />
