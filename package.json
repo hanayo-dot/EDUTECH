@@ -8,6 +8,9 @@
     "apps/*"
   ],
   "scripts": {
+    "dev": "npm run --workspace=@chuoms/web dev",
+    "dev:web": "npm run --workspace=@chuoms/web dev",
+    "dev:api": "npm run --workspace=@chuoms/api start:dev",
     "build": "npm run --workspaces --if-present build",
     "test": "npm run --workspaces --if-present test",
     "lint": "npm run --workspaces --if-present lint",
