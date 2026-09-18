@@ -176,7 +176,7 @@ export default function CurriculumPage() {
               onClick={() => setActiveTab('hierarchy')}
               className={`px-4 py-2 rounded-xl text-xs font-semibold flex items-center space-x-2 transition ${
                 activeTab === 'hierarchy'
-                  ? 'bg-[#f43f85] text-white shadow-sm'
+                  ? 'bg-royal-600 text-white shadow-xs'
                   : 'bg-white text-slate-600 hover:bg-slate-50 border border-slate-200/80'
               }`}
             >
@@ -188,7 +188,7 @@ export default function CurriculumPage() {
               onClick={() => setActiveTab('calendar')}
               className={`px-4 py-2 rounded-xl text-xs font-semibold flex items-center space-x-2 transition ${
                 activeTab === 'calendar'
-                  ? 'bg-[#f43f85] text-white shadow-sm'
+                  ? 'bg-royal-600 text-white shadow-xs'
                   : 'bg-white text-slate-600 hover:bg-slate-50 border border-slate-200/80'
               }`}
             >
@@ -200,7 +200,7 @@ export default function CurriculumPage() {
               onClick={() => setActiveTab('courses')}
               className={`px-4 py-2 rounded-xl text-xs font-semibold flex items-center space-x-2 transition ${
                 activeTab === 'courses'
-                  ? 'bg-[#f43f85] text-white shadow-sm'
+                  ? 'bg-royal-600 text-white shadow-xs'
                   : 'bg-white text-slate-600 hover:bg-slate-50 border border-slate-200/80'
               }`}
             >
@@ -212,7 +212,7 @@ export default function CurriculumPage() {
               onClick={() => setActiveTab('audit')}
               className={`px-4 py-2 rounded-xl text-xs font-semibold flex items-center space-x-2 transition ${
                 activeTab === 'audit'
-                  ? 'bg-[#f43f85] text-white shadow-sm'
+                  ? 'bg-royal-600 text-white shadow-xs'
                   : 'bg-white text-slate-600 hover:bg-slate-50 border border-slate-200/80'
               }`}
             >
@@ -243,7 +243,7 @@ export default function CurriculumPage() {
 
             {loading && (
               <div className="flex flex-col items-center justify-center py-20 text-slate-400">
-                <Loader2 className="w-8 h-8 animate-spin text-[#f43f85] mb-3" />
+                <Loader2 className="w-8 h-8 animate-spin text-royal-600 mb-3" />
                 <p className="text-xs">Loading institutional data...</p>
               </div>
             )}
@@ -253,7 +253,7 @@ export default function CurriculumPage() {
               <div className="space-y-6">
                 <div className="bg-white border border-slate-100 rounded-3xl p-6 shadow-sm">
                   <div className="flex items-center space-x-3">
-                    <div className="p-3 rounded-2xl bg-pink-50 border border-pink-100 text-[#f43f85]">
+                    <div className="p-3 rounded-2xl bg-royal-50 border border-royal-100 text-royal-700">
                       <Building2 className="w-6 h-6" />
                     </div>
                     <div>
@@ -333,7 +333,7 @@ export default function CurriculumPage() {
               <div className="space-y-6">
                 <div className="bg-white border border-slate-100 rounded-3xl p-6 shadow-sm">
                   <h2 className="text-base font-bold text-slate-800 flex items-center">
-                    <Calendar className="w-4 h-4 text-[#f43f85] mr-2" />
+                    <Calendar className="w-4 h-4 text-royal-600 mr-2" />
                     Academic Years ({academicYears.length})
                   </h2>
                   <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -342,14 +342,14 @@ export default function CurriculumPage() {
                         key={yr.id}
                         className={`p-4 rounded-2xl border transition ${
                           yr.isCurrent
-                            ? 'bg-pink-50/50 border-pink-200'
+                            ? 'bg-royal-50/50 border-royal-200 shadow-xs'
                             : 'bg-slate-50 border-slate-200/80'
                         }`}
                       >
                         <div className="flex items-center justify-between">
                           <span className="text-sm font-bold text-slate-800">{yr.name}</span>
                           {yr.isCurrent && (
-                            <span className="text-[10px] font-bold text-[#f43f85] bg-pink-100 px-2 py-0.5 rounded-full">
+                            <span className="text-[10px] font-bold text-royal-700 bg-royal-100 px-2 py-0.5 rounded-full">
                               CURRENT
                             </span>
                           )}
@@ -431,12 +431,12 @@ export default function CurriculumPage() {
                         onClick={() => loadCourseGraph(c.id)}
                         className={`p-4 rounded-2xl border cursor-pointer transition ${
                           selectedCourse?.id === c.id
-                            ? 'bg-pink-50/60 border-pink-300 shadow-sm'
+                            ? 'bg-royal-50/60 border-royal-300 shadow-xs'
                             : 'bg-white border-slate-100 hover:border-slate-200 shadow-sm'
                         }`}
                       >
                         <div className="flex items-center justify-between">
-                          <span className="text-xs font-mono font-bold text-[#f43f85] px-2 py-0.5 rounded-lg bg-pink-100/70">
+                          <span className="text-xs font-mono font-bold text-royal-700 px-2 py-0.5 rounded-lg bg-royal-100/80">
                             {c.code}
                           </span>
                           <span className="text-[11px] text-slate-400">Level {c.level}</span>
@@ -445,7 +445,7 @@ export default function CurriculumPage() {
                         <p className="text-[11px] text-slate-400 mt-0.5 truncate">{c.department?.name}</p>
                         <div className="mt-3 flex items-center justify-between text-[11px] text-slate-500 border-t border-slate-100 pt-2">
                           <span>{c.creditHours} Credits</span>
-                          <span className="text-teal-600 font-semibold flex items-center">
+                          <span className="text-royal-600 font-semibold flex items-center">
                             Inspect DAG <ChevronRight className="w-3 h-3 ml-0.5" />
                           </span>
                         </div>
@@ -457,13 +457,13 @@ export default function CurriculumPage() {
                 {/* Course Details & Prerequisite Graph Panel */}
                 <div className="bg-white border border-slate-100 rounded-3xl p-6 shadow-sm lg:col-span-1 h-fit">
                   <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 flex items-center">
-                    <GitBranch className="w-4 h-4 text-teal-600 mr-2" />
+                    <GitBranch className="w-4 h-4 text-royal-600 mr-2" />
                     Prerequisite Dependency Graph
                   </h3>
 
                   {graphLoading && (
                     <div className="py-12 flex flex-col items-center justify-center text-slate-400 text-xs">
-                      <Loader2 className="w-6 h-6 animate-spin text-[#f43f85] mb-2" />
+                      <Loader2 className="w-6 h-6 animate-spin text-royal-600 mb-2" />
                       Calculating DAG topology...
                     </div>
                   )}
@@ -471,7 +471,7 @@ export default function CurriculumPage() {
                   {!graphLoading && selectedCourse && courseGraph && (
                     <div className="space-y-4">
                       <div className="p-3.5 bg-slate-50 rounded-2xl border border-slate-200">
-                        <span className="text-xs font-mono font-bold text-[#f43f85]">{selectedCourse.code}</span>
+                        <span className="text-xs font-mono font-bold text-royal-700">{selectedCourse.code}</span>
                         <h4 className="text-xs font-bold text-slate-800 mt-1">{selectedCourse.title}</h4>
                         <p className="text-[11px] text-slate-500 mt-0.5">{selectedCourse.department?.name}</p>
                         <div className="mt-2 text-[11px] text-slate-600 font-medium">
@@ -571,7 +571,7 @@ export default function CurriculumPage() {
                   <button
                     onClick={runDegreeAudit}
                     disabled={!selectedVersionId || auditLoading}
-                    className="inline-flex items-center px-4 py-2.5 rounded-xl bg-[#f43f85] hover:bg-pink-600 font-bold text-white shadow-sm transition text-xs disabled:opacity-50"
+                    className="inline-flex items-center px-4 py-2.5 rounded-xl bg-royal-600 hover:bg-royal-700 font-bold text-white shadow-xs transition text-xs disabled:opacity-50"
                   >
                     {auditLoading ? (
                       <>

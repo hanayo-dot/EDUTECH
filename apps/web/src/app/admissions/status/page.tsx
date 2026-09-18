@@ -131,9 +131,9 @@ function StatusTrackerContent() {
       {/* Header */}
       <header className="bg-white border-b border-slate-200 px-6 py-4 flex items-center justify-between sticky top-0 z-30">
         <Link href="/" className="flex items-center space-x-2">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#ec4899] via-[#f43f85] to-[#38bdf8] flex items-center justify-center p-[2px]">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-royal-600 via-royal-500 to-azure-500 flex items-center justify-center p-[2px]">
             <div className="w-full h-full bg-white rounded-[10px] flex items-center justify-center">
-              <GraduationCap className="w-5 h-5 text-[#f43f85]" />
+              <GraduationCap className="w-5 h-5 text-royal-600" />
             </div>
           </div>
           <span className="font-extrabold text-slate-900 tracking-tight text-lg">
@@ -142,7 +142,7 @@ function StatusTrackerContent() {
         </Link>
 
         <div className="flex items-center space-x-3 text-xs font-semibold">
-          <Link href="/admissions/apply" className="text-[#f43f85] hover:underline">
+          <Link href="/admissions/apply" className="text-royal-600 hover:underline">
             + New Application
           </Link>
           <span className="text-slate-300">|</span>
@@ -173,7 +173,7 @@ function StatusTrackerContent() {
                 placeholder="e.g. APP-2026-1001"
                 value={appNumber}
                 onChange={(e) => setAppNumber(e.target.value)}
-                className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:ring-2 focus:ring-[#f43f85]/30 focus:border-[#f43f85] focus:outline-none font-mono font-bold uppercase"
+                className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:ring-2 focus:ring-royal-500/30 focus:border-royal-500 focus:outline-none font-mono font-bold uppercase"
               />
             </div>
 
@@ -186,7 +186,7 @@ function StatusTrackerContent() {
                 placeholder="name@example.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:ring-2 focus:ring-[#f43f85]/30 focus:border-[#f43f85] focus:outline-none"
+                className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:ring-2 focus:ring-royal-500/30 focus:border-royal-500 focus:outline-none"
               />
             </div>
 
@@ -194,7 +194,7 @@ function StatusTrackerContent() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full px-6 py-2.5 bg-slate-900 hover:bg-[#f43f85] text-white font-bold rounded-xl text-xs transition shadow-sm flex items-center justify-center space-x-2"
+                className="w-full px-6 py-2.5 bg-royal-600 hover:bg-royal-700 text-white font-bold rounded-xl text-xs transition shadow-xs flex items-center justify-center space-x-2"
               >
                 <Search className="w-4 h-4" />
                 <span>{loading ? 'Searching...' : 'Track Application'}</span>
@@ -216,7 +216,7 @@ function StatusTrackerContent() {
             {/* Header info */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-slate-100 pb-5">
               <div>
-                <span className="text-xs font-mono font-bold text-pink-600 bg-pink-50 px-2.5 py-1 rounded-md border border-pink-200">
+                <span className="text-xs font-mono font-bold text-royal-700 bg-royal-50 px-2.5 py-1 rounded-md border border-royal-200">
                   {result.applicationNumber}
                 </span>
                 <h2 className="text-2xl font-extrabold text-slate-900 mt-2">
@@ -249,7 +249,7 @@ function StatusTrackerContent() {
                       key={wf.key}
                       className={`p-3 rounded-2xl border flex flex-col justify-between text-center transition ${
                         isCurrent
-                          ? 'border-[#f43f85] bg-pink-50/50 shadow-sm'
+                          ? 'border-royal-500 bg-royal-50/50 shadow-xs text-royal-900'
                           : isDone
                           ? 'border-emerald-200 bg-emerald-50/40 text-emerald-800'
                           : 'border-slate-100 bg-slate-50/50 text-slate-400'

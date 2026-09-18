@@ -280,10 +280,10 @@ function TimetableContent() {
 
       <main className="flex-1 flex flex-col min-w-0 overflow-y-auto">
         {/* Top Header */}
-        <header className="bg-white border-b border-slate-200 px-6 py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4 sticky top-0 z-20 shadow-sm">
+        <header className="bg-white border-b border-slate-200 px-6 py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4 sticky top-0 z-20 shadow-xs">
           <div>
             <div className="flex items-center space-x-2">
-              <span className="p-2 bg-indigo-50 text-indigo-600 rounded-lg">
+              <span className="p-2 bg-royal-50 text-royal-600 rounded-lg">
                 <CalendarIcon className="w-5 h-5" />
               </span>
               <div>
@@ -303,7 +303,7 @@ function TimetableContent() {
               <button
                 onClick={() => setSelectedRole('student')}
                 className={`px-3 py-1.5 rounded-lg transition-all ${
-                  selectedRole === 'student' ? 'bg-white text-indigo-600 shadow-xs font-semibold' : 'hover:text-slate-900'
+                  selectedRole === 'student' ? 'bg-white text-royal-600 shadow-xs font-semibold' : 'hover:text-slate-900'
                 }`}
               >
                 Student View
@@ -311,7 +311,7 @@ function TimetableContent() {
               <button
                 onClick={() => setSelectedRole('lecturer')}
                 className={`px-3 py-1.5 rounded-lg transition-all ${
-                  selectedRole === 'lecturer' ? 'bg-white text-indigo-600 shadow-xs font-semibold' : 'hover:text-slate-900'
+                  selectedRole === 'lecturer' ? 'bg-white text-royal-600 shadow-xs font-semibold' : 'hover:text-slate-900'
                 }`}
               >
                 Lecturer View
@@ -319,7 +319,7 @@ function TimetableContent() {
               <button
                 onClick={() => setSelectedRole('admin')}
                 className={`px-3 py-1.5 rounded-lg transition-all ${
-                  selectedRole === 'admin' ? 'bg-white text-indigo-600 shadow-xs font-semibold' : 'hover:text-slate-900'
+                  selectedRole === 'admin' ? 'bg-white text-royal-600 shadow-xs font-semibold' : 'hover:text-slate-900'
                 }`}
               >
                 Master Timetable
@@ -329,7 +329,7 @@ function TimetableContent() {
             {/* Schedule Slot Button */}
             <button
               onClick={() => setIsModalOpen(true)}
-              className="inline-flex items-center px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold rounded-xl shadow-sm transition-all gap-1.5 cursor-pointer"
+              className="inline-flex items-center px-4 py-2 bg-royal-600 hover:bg-royal-700 text-white text-xs font-semibold rounded-xl shadow-xs transition-all gap-1.5 cursor-pointer"
             >
               <Plus className="w-4 h-4" />
               <span>Allocate Slot</span>
@@ -347,7 +347,7 @@ function TimetableContent() {
                 <h3 className="text-2xl font-bold text-slate-900 mt-1">{totalSessions}</h3>
                 <p className="text-xs text-emerald-600 font-medium mt-0.5">0 timetable clashes detected</p>
               </div>
-              <div className="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-xl bg-royal-50 text-royal-600 flex items-center justify-center">
                 <Clock className="w-5 h-5" />
               </div>
             </div>
@@ -379,14 +379,14 @@ function TimetableContent() {
                 <p className="text-xs font-medium text-slate-500 uppercase tracking-wider">Attendance Portal</p>
                 <Link
                   href="/attendance"
-                  className="text-sm font-bold text-pink-600 hover:text-pink-700 flex items-center mt-1 group"
+                  className="text-sm font-bold text-royal-600 hover:text-royal-700 flex items-center mt-1 group"
                 >
                   <span>Launch QR Check-in</span>
                   <ChevronRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
                 </Link>
                 <p className="text-xs text-slate-500 font-medium mt-0.5">Live lecturer display & scanner</p>
               </div>
-              <div className="w-10 h-10 rounded-xl bg-pink-50 text-pink-600 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-xl bg-royal-50 text-royal-600 flex items-center justify-center">
                 <Sparkles className="w-5 h-5" />
               </div>
             </div>
@@ -399,7 +399,7 @@ function TimetableContent() {
                 onClick={() => setSelectedDay(null)}
                 className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                   selectedDay === null
-                    ? 'bg-indigo-600 text-white shadow-xs'
+                    ? 'bg-royal-600 text-white shadow-xs'
                     : 'bg-slate-50 text-slate-600 hover:bg-slate-100'
                 }`}
               >
@@ -413,7 +413,7 @@ function TimetableContent() {
                     onClick={() => setSelectedDay(dayNum)}
                     className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                       selectedDay === dayNum
-                        ? 'bg-indigo-600 text-white shadow-xs'
+                        ? 'bg-royal-600 text-white shadow-xs'
                         : 'bg-slate-50 text-slate-600 hover:bg-slate-100'
                     }`}
                   >
@@ -425,7 +425,7 @@ function TimetableContent() {
 
             <button
               onClick={fetchTimetableData}
-              className="p-2 text-slate-500 hover:text-indigo-600 hover:bg-slate-50 rounded-lg transition-all"
+              className="p-2 text-slate-500 hover:text-royal-600 hover:bg-slate-50 rounded-lg transition-all"
               title="Refresh Timetable"
             >
               <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} />
@@ -453,7 +453,7 @@ function TimetableContent() {
               <div key={day.dayOfWeek} className="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden">
                 <div className="px-5 py-3.5 bg-slate-50/80 border-b border-slate-200 flex items-center justify-between">
                   <div className="flex items-center space-x-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-indigo-600" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-royal-600" />
                     <h3 className="text-sm font-bold text-slate-800">{day.dayName}</h3>
                   </div>
                   <span className="text-xs font-semibold text-slate-500 bg-white px-2.5 py-1 rounded-md border border-slate-200">
@@ -471,11 +471,11 @@ function TimetableContent() {
                       {day.slots.map((slot) => (
                         <div
                           key={slot.id}
-                          className="p-4 rounded-xl border border-slate-200 hover:border-indigo-300 hover:shadow-md transition-all bg-white flex flex-col justify-between"
+                          className="p-4 rounded-xl border border-slate-200 hover:border-royal-300 hover:shadow-md transition-all bg-white flex flex-col justify-between"
                         >
                           <div>
                             <div className="flex items-start justify-between gap-2 mb-2">
-                              <span className="text-xs font-bold px-2 py-0.5 rounded bg-indigo-50 text-indigo-700">
+                              <span className="text-xs font-bold px-2 py-0.5 rounded bg-royal-50 text-royal-700">
                                 {slot.course.code}
                               </span>
                               <span
@@ -534,7 +534,7 @@ function TimetableContent() {
             <div className="bg-white rounded-2xl shadow-xl border border-slate-200 max-w-lg w-full p-6 space-y-4">
               <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                 <h3 className="text-base font-bold text-slate-900 flex items-center gap-2">
-                  <CalendarIcon className="w-4 h-4 text-indigo-600" />
+                  <CalendarIcon className="w-4 h-4 text-royal-600" />
                   <span>Allocate Timetable Slot</span>
                 </h3>
                 <button
@@ -552,7 +552,7 @@ function TimetableContent() {
                     value={selectedSectionId}
                     onChange={(e) => setSelectedSectionId(e.target.value)}
                     required
-                    className="w-full px-3 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none"
+                    className="w-full px-3 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-royal-500/30 focus:border-royal-500 outline-none"
                   >
                     <option value="">-- Select Class Section --</option>
                     {sections.map((sec) => (
@@ -569,7 +569,7 @@ function TimetableContent() {
                     value={selectedRoomId}
                     onChange={(e) => setSelectedRoomId(e.target.value)}
                     required
-                    className="w-full px-3 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none"
+                    className="w-full px-3 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-royal-500/30 focus:border-royal-500 outline-none"
                   >
                     <option value="">-- Select Room --</option>
                     {rooms.map((r) => (
@@ -586,7 +586,7 @@ function TimetableContent() {
                     <select
                       value={newDayOfWeek}
                       onChange={(e) => setNewDayOfWeek(Number(e.target.value))}
-                      className="w-full px-3 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none"
+                      className="w-full px-3 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-royal-500/30 focus:border-royal-500 outline-none"
                     >
                       <option value={1}>Monday</option>
                       <option value={2}>Tuesday</option>
@@ -603,7 +603,7 @@ function TimetableContent() {
                     <select
                       value={newSessionType}
                       onChange={(e) => setNewSessionType(e.target.value)}
-                      className="w-full px-3 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none"
+                      className="w-full px-3 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-royal-500/30 focus:border-royal-500 outline-none"
                     >
                       <option value="LECTURE">Lecture</option>
                       <option value="LAB">Laboratory</option>
@@ -623,7 +623,7 @@ function TimetableContent() {
                       onChange={(e) => setNewStartTime(e.target.value)}
                       required
                       placeholder="09:00"
-                      className="w-full px-3 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none"
+                      className="w-full px-3 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-royal-500/30 focus:border-royal-500 outline-none"
                     />
                   </div>
 
@@ -636,13 +636,13 @@ function TimetableContent() {
                       onChange={(e) => setNewEndTime(e.target.value)}
                       required
                       placeholder="11:00"
-                      className="w-full px-3 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none"
+                      className="w-full px-3 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-royal-500/30 focus:border-royal-500 outline-none"
                     />
                   </div>
                 </div>
 
                 <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl text-[11px] text-slate-500 flex items-start space-x-2">
-                  <AlertCircle className="w-4 h-4 text-indigo-600 flex-shrink-0 mt-0.5" />
+                  <AlertCircle className="w-4 h-4 text-royal-600 flex-shrink-0 mt-0.5" />
                   <span>
                     Our clash detection engine automatically verifies room availability, lecturer scheduling, and room
                     seating capacity before confirming.
@@ -660,7 +660,7 @@ function TimetableContent() {
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="px-5 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl transition-all shadow-sm cursor-pointer disabled:opacity-50"
+                    className="px-5 py-2 bg-royal-600 hover:bg-royal-700 text-white font-semibold rounded-xl transition-all shadow-xs cursor-pointer disabled:opacity-50"
                   >
                     {submitting ? 'Verifying Clashes...' : 'Confirm Schedule'}
                   </button>
@@ -679,7 +679,7 @@ export default function TimetablePage() {
     <Suspense
       fallback={
         <div className="min-h-screen flex items-center justify-center bg-slate-50">
-          <div className="w-8 h-8 border-4 border-indigo-600 border-t-transparent rounded-full animate-spin" />
+          <div className="w-8 h-8 border-4 border-royal-600 border-t-transparent rounded-full animate-spin" />
         </div>
       }
     >

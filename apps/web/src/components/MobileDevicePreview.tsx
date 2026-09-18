@@ -10,6 +10,7 @@ import {
   ChevronLeft,
   ChevronRight,
   SlidersHorizontal,
+  School,
 } from 'lucide-react';
 
 export default function MobileDevicePreview() {
@@ -40,12 +41,10 @@ export default function MobileDevicePreview() {
 
       {/* Mobile App Header */}
       <div className="flex items-center justify-between px-1 pt-1">
-        <div className="w-7 h-7 rounded-xl bg-gradient-to-tr from-[#ec4899] to-[#06b6d4] p-[1.5px]">
-          <div className="w-full h-full bg-white rounded-[9px] flex items-center justify-center">
-            <span className="text-[10px] font-bold text-[#f43f85]">S</span>
-          </div>
+        <div className="w-7 h-7 rounded-xl bg-royal-700 flex items-center justify-center text-white shadow-xs">
+          <School className="w-3.5 h-3.5" />
         </div>
-        <h2 className="text-sm font-bold text-slate-800">Attendance</h2>
+        <h2 className="text-sm font-bold text-slate-800">Attendance Portal</h2>
         <button className="p-1 rounded-lg hover:bg-slate-100 text-slate-600">
           <Menu className="w-4 h-4" />
         </button>
@@ -54,7 +53,7 @@ export default function MobileDevicePreview() {
       {/* Attendance Summary Header */}
       <div className="flex items-center justify-between px-1">
         <span className="text-xs font-bold text-slate-800">Attendance Summary</span>
-        <span className="inline-flex items-center space-x-1 px-2 py-0.5 rounded-lg bg-teal-50 border border-teal-200 text-teal-700 text-[10px] font-semibold">
+        <span className="inline-flex items-center space-x-1 px-2 py-0.5 rounded-lg bg-slate-100 border border-slate-200 text-slate-700 text-[10px] font-semibold">
           <span>Today</span>
           <ChevronDown className="w-2.5 h-2.5" />
         </span>
@@ -63,8 +62,8 @@ export default function MobileDevicePreview() {
       {/* Mobile Stacked Cards */}
       <div className="space-y-3">
         {/* Students Mobile Card */}
-        <div className="p-1 rounded-2xl bg-white border border-slate-100 shadow-xs flex items-center justify-between">
-          <div className="w-[52%] rounded-xl p-3 bg-gradient-to-br from-[#ff5e97] via-[#f43f85] to-[#f472b6] text-white">
+        <div className="p-1 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-between">
+          <div className="w-[52%] rounded-xl p-3 bg-gradient-to-br from-royal-900 via-royal-700 to-indigo-700 text-white">
             <span className="text-[10px] font-semibold text-white/90">Students</span>
             <div className="flex items-baseline space-x-1.5 mt-1">
               <span className="text-xl font-extrabold text-white">1,180</span>
@@ -89,14 +88,14 @@ export default function MobileDevicePreview() {
         </div>
 
         {/* Teachers Mobile Card */}
-        <div className="p-1 rounded-2xl bg-white border border-slate-100 shadow-xs flex items-center justify-between">
-          <div className="w-[52%] rounded-xl p-3 bg-gradient-to-br from-[#d1fae5] via-[#a7f3d0] to-[#5eead4] text-teal-950">
-            <span className="text-[10px] font-semibold text-teal-900">Teachers</span>
+        <div className="p-1 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-between">
+          <div className="w-[52%] rounded-xl p-3 bg-gradient-to-br from-emerald-800 via-teal-700 to-emerald-600 text-white">
+            <span className="text-[10px] font-semibold text-white/90">Faculty</span>
             <div className="flex items-baseline space-x-1.5 mt-1">
-              <span className="text-xl font-extrabold text-teal-950">80</span>
-              <span className="text-[9px] px-1.5 py-0.2 rounded-full bg-teal-800/10 font-bold">11.2%</span>
+              <span className="text-xl font-extrabold text-white">80</span>
+              <span className="text-[9px] px-1.5 py-0.2 rounded-full bg-white/20 font-bold">11.2%</span>
             </div>
-            <span className="text-[9px] text-teal-800/80 block mt-0.5">Total Present</span>
+            <span className="text-[9px] text-white/80 block mt-0.5">Total Present</span>
           </div>
           <div className="w-[45%] text-[10px] space-y-1 pr-2">
             <div className="flex justify-between text-slate-500">
@@ -115,12 +114,12 @@ export default function MobileDevicePreview() {
         </div>
 
         {/* Staff Mobile Card */}
-        <div className="p-1 rounded-2xl bg-white border border-slate-100 shadow-xs flex items-center justify-between">
-          <div className="w-[52%] rounded-xl p-3 bg-gradient-to-br from-[#1e293b] via-[#0f172a] to-[#1e3a8a] text-white">
+        <div className="p-1 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-between">
+          <div className="w-[52%] rounded-xl p-3 bg-gradient-to-br from-slate-900 via-navy-800 to-azure-900 text-white">
             <span className="text-[10px] font-semibold text-slate-200">Staff</span>
             <div className="flex items-baseline space-x-1.5 mt-1">
               <span className="text-xl font-extrabold text-white">32</span>
-              <span className="text-[9px] px-1.5 py-0.2 rounded-full bg-teal-400/20 text-teal-300 font-bold">10.4%</span>
+              <span className="text-[9px] px-1.5 py-0.2 rounded-full bg-white/20 text-white font-bold">10.4%</span>
             </div>
             <span className="text-[9px] text-slate-300 block mt-0.5">Total Present</span>
           </div>
@@ -142,19 +141,19 @@ export default function MobileDevicePreview() {
       </div>
 
       {/* Attendance Overview Card */}
-      <div className="p-3 bg-white rounded-2xl border border-slate-100 shadow-xs space-y-2">
+      <div className="p-3 bg-white rounded-2xl border border-slate-200 shadow-xs space-y-2">
         <div className="flex items-center justify-between">
           <span className="text-xs font-bold text-slate-800">Attendance Overview</span>
-          <span className="text-[10px] text-teal-700 bg-teal-50 px-1.5 py-0.5 rounded border border-teal-200 font-medium flex items-center space-x-0.5">
+          <span className="text-[10px] text-slate-700 bg-slate-100 px-1.5 py-0.5 rounded border border-slate-200 font-medium flex items-center space-x-0.5">
             <span>Last Semester</span>
             <ChevronDown className="w-2.5 h-2.5" />
           </span>
         </div>
 
         <div className="flex space-x-3 text-[10px] text-slate-500">
-          <span className="flex items-center space-x-1"><span className="w-1.5 h-1.5 rounded-full bg-[#f43f85]" /><span>Students</span></span>
-          <span className="flex items-center space-x-1"><span className="w-1.5 h-1.5 rounded-full bg-[#14b8a6]" /><span>Teachers</span></span>
-          <span className="flex items-center space-x-1"><span className="w-1.5 h-1.5 rounded-full bg-[#1e293b]" /><span>Staff</span></span>
+          <span className="flex items-center space-x-1"><span className="w-1.5 h-1.5 rounded-full bg-royal-600" /><span>Students</span></span>
+          <span className="flex items-center space-x-1"><span className="w-1.5 h-1.5 rounded-full bg-emerald-500" /><span>Faculty</span></span>
+          <span className="flex items-center space-x-1"><span className="w-1.5 h-1.5 rounded-full bg-slate-600" /><span>Staff</span></span>
         </div>
 
         {/* Mini Chart */}
@@ -163,19 +162,19 @@ export default function MobileDevicePreview() {
             <path
               d="M 10 50 C 50 30, 80 20, 120 40 C 160 55, 200 15, 240 25 C 270 30, 290 20, 290 20"
               fill="none"
-              stroke="#f43f85"
+              stroke="#2563eb"
               strokeWidth="2"
             />
             <path
               d="M 10 60 C 50 45, 80 35, 120 48 C 160 60, 200 30, 240 38 C 270 42, 290 35, 290 35"
               fill="none"
-              stroke="#14b8a6"
+              stroke="#10b981"
               strokeWidth="2"
             />
             <path
               d="M 10 68 C 50 58, 80 50, 120 58 C 160 68, 200 48, 240 52 C 270 55, 290 50, 290 50"
               fill="none"
-              stroke="#1e293b"
+              stroke="#475569"
               strokeWidth="1.5"
             />
           </svg>
@@ -186,24 +185,24 @@ export default function MobileDevicePreview() {
       </div>
 
       {/* Mini Roster Table */}
-      <div className="p-3 bg-white rounded-2xl border border-slate-100 shadow-xs space-y-2">
+      <div className="p-3 bg-white rounded-2xl border border-slate-200 shadow-xs space-y-2">
         <div className="flex items-center justify-between">
           <span className="text-xs font-bold text-slate-800">Attendance</span>
-          <SlidersHorizontal className="w-3.5 h-3.5 text-teal-600" />
+          <SlidersHorizontal className="w-3.5 h-3.5 text-royal-600" />
         </div>
 
         <div className="space-y-1.5 max-h-48 overflow-y-auto pr-1">
           {students.map((s, idx) => (
-            <div key={idx} className="flex items-center justify-between text-[11px] py-1 border-b border-slate-50 last:border-none">
+            <div key={idx} className="flex items-center justify-between text-[11px] py-1 border-b border-slate-100 last:border-none">
               <div>
                 <div className="font-semibold text-slate-800 text-[11px] leading-tight">{s.name}</div>
                 <div className="text-[9px] text-slate-400 font-mono">{s.code}</div>
               </div>
               <div className="flex items-center space-x-1.5">
-                <span className="w-4 h-4 rounded-full bg-[#10b981] text-white flex items-center justify-center">
+                <span className="w-4 h-4 rounded-full bg-emerald-500 text-white flex items-center justify-center">
                   <Check className="w-2.5 h-2.5 stroke-[3]" />
                 </span>
-                <span className="w-4 h-4 rounded-full bg-[#10b981] text-white flex items-center justify-center">
+                <span className="w-4 h-4 rounded-full bg-emerald-500 text-white flex items-center justify-center">
                   <Check className="w-2.5 h-2.5 stroke-[3]" />
                 </span>
                 <span className="text-slate-300 font-bold text-xs select-none px-1">&mdash;</span>
@@ -214,7 +213,7 @@ export default function MobileDevicePreview() {
 
         {/* Mini Pagination */}
         <div className="flex items-center justify-center space-x-1 pt-2">
-          <span className="px-2 py-0.5 rounded bg-[#f43f85] text-white font-bold text-[10px]">1</span>
+          <span className="px-2 py-0.5 rounded bg-royal-600 text-white font-bold text-[10px]">1</span>
           <span className="px-2 py-0.5 rounded bg-slate-100 text-slate-600 text-[10px]">2</span>
           <span className="px-2 py-0.5 rounded bg-slate-100 text-slate-600 text-[10px]">3</span>
           <span className="text-[10px] text-slate-400">&hellip;</span>
@@ -224,7 +223,7 @@ export default function MobileDevicePreview() {
 
       {/* Footer */}
       <div className="text-center text-[9px] text-slate-400 py-1 border-t border-slate-100">
-        Copyright &copy; 2026 Patentrixx / ChuoMS
+        Copyright &copy; 2026 ChuoMS Enterprise
       </div>
     </div>
   );

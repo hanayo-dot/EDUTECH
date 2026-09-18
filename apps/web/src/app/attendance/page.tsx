@@ -314,7 +314,7 @@ function AttendanceContent() {
         <header className="bg-white border-b border-slate-200 px-6 py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4 sticky top-0 z-20 shadow-sm">
           <div>
             <div className="flex items-center space-x-2">
-              <span className="p-2 bg-pink-50 text-pink-600 rounded-lg">
+              <span className="p-2 bg-royal-50 text-royal-700 rounded-xl">
                 <UserCheck className="w-5 h-5" />
               </span>
               <div>
@@ -334,7 +334,7 @@ function AttendanceContent() {
               <button
                 onClick={() => setActiveTab('lecturer')}
                 className={`px-3 py-1.5 rounded-lg transition-all ${
-                  activeTab === 'lecturer' ? 'bg-white text-pink-600 shadow-xs font-semibold' : 'hover:text-slate-900'
+                  activeTab === 'lecturer' ? 'bg-white text-royal-700 shadow-xs font-semibold' : 'hover:text-slate-900'
                 }`}
               >
                 Lecturer Station
@@ -343,7 +343,7 @@ function AttendanceContent() {
                 onClick={() => setActiveTab('student-checkin')}
                 className={`px-3 py-1.5 rounded-lg transition-all ${
                   activeTab === 'student-checkin'
-                    ? 'bg-white text-pink-600 shadow-xs font-semibold'
+                    ? 'bg-white text-royal-700 shadow-xs font-semibold'
                     : 'hover:text-slate-900'
                 }`}
               >
@@ -352,7 +352,7 @@ function AttendanceContent() {
               <button
                 onClick={() => setActiveTab('analytics')}
                 className={`px-3 py-1.5 rounded-lg transition-all ${
-                  activeTab === 'analytics' ? 'bg-white text-pink-600 shadow-xs font-semibold' : 'hover:text-slate-900'
+                  activeTab === 'analytics' ? 'bg-white text-royal-700 shadow-xs font-semibold' : 'hover:text-slate-900'
                 }`}
               >
                 75% Exam Audit
@@ -386,7 +386,7 @@ function AttendanceContent() {
               <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
                 <div className="space-y-2 max-w-xl">
                   <div className="flex items-center space-x-2">
-                    <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-pink-100 text-pink-700">
+                    <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-royal-100 text-royal-800">
                       Instructional Session Control
                     </span>
                     <span className="text-xs font-medium text-slate-500">
@@ -406,7 +406,7 @@ function AttendanceContent() {
                   {!activeSession ? (
                     <button
                       onClick={handleStartSession}
-                      className="px-5 py-2.5 bg-pink-600 hover:bg-pink-700 text-white font-semibold text-xs rounded-xl shadow-sm transition-all flex items-center gap-2 cursor-pointer"
+                      className="px-5 py-2.5 bg-royal-600 hover:bg-royal-700 text-white font-semibold text-xs rounded-xl shadow-xs transition-all flex items-center gap-2 cursor-pointer"
                     >
                       <QrCode className="w-4 h-4" />
                       <span>Launch Live QR Session</span>
@@ -415,7 +415,7 @@ function AttendanceContent() {
                     <div className="flex items-center gap-2">
                       <button
                         onClick={handleRefreshQr}
-                        className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-xs rounded-xl shadow-sm transition-all flex items-center gap-2 cursor-pointer"
+                        className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-xs rounded-xl shadow-xs transition-all flex items-center gap-2 cursor-pointer"
                       >
                         <RefreshCw className="w-4 h-4" />
                         <span>Rotate QR Token</span>
@@ -441,7 +441,7 @@ function AttendanceContent() {
                         <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
                         Live Projection Mode
                       </span>
-                      <span className="text-xs font-mono font-bold text-pink-600 bg-pink-50 px-2 py-1 rounded-md">
+                      <span className="text-xs font-mono font-bold text-royal-700 bg-royal-50 px-2 py-1 rounded-md border border-royal-200/50">
                         Expires in: {formatTimer(secondsRemaining)}
                       </span>
                     </div>
@@ -537,7 +537,7 @@ function AttendanceContent() {
 
                   <button
                     onClick={handleSaveRoster}
-                    className="px-4 py-2 bg-pink-600 hover:bg-pink-700 text-white text-xs font-semibold rounded-xl shadow-xs transition-all"
+                    className="px-4 py-2 bg-royal-600 hover:bg-royal-700 text-white text-xs font-semibold rounded-xl shadow-xs transition-all"
                   >
                     Save Changes
                   </button>
@@ -628,7 +628,7 @@ function AttendanceContent() {
             <div className="max-w-xl mx-auto space-y-6">
               <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs space-y-4">
                 <div className="text-center space-y-1">
-                  <div className="w-12 h-12 rounded-2xl bg-pink-50 text-pink-600 flex items-center justify-center mx-auto mb-2">
+                  <div className="w-12 h-12 rounded-2xl bg-royal-50 text-royal-700 flex items-center justify-center mx-auto mb-2">
                     <QrCode className="w-6 h-6" />
                   </div>
                   <h2 className="text-lg font-bold text-slate-900">Student Attendance Check-In</h2>
@@ -648,7 +648,7 @@ function AttendanceContent() {
                       onChange={(e) => setInputToken(e.target.value)}
                       placeholder="e.g. qr-token-code or paste QR string"
                       required
-                      className="w-full px-4 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-pink-500 outline-none font-mono text-sm"
+                      className="w-full px-4 py-2.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-royal-500 outline-none font-mono text-sm"
                     />
                   </div>
 
@@ -675,7 +675,7 @@ function AttendanceContent() {
                   <button
                     type="submit"
                     disabled={checkingIn}
-                    className="w-full py-2.5 bg-pink-600 hover:bg-pink-700 text-white font-semibold rounded-xl shadow-xs transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                    className="w-full py-2.5 bg-royal-600 hover:bg-royal-700 text-white font-semibold rounded-xl shadow-xs transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                   >
                     <Send className="w-4 h-4" />
                     <span>{checkingIn ? 'Verifying...' : 'Submit Attendance Verification'}</span>
@@ -800,7 +800,7 @@ export default function AttendancePage() {
     <Suspense
       fallback={
         <div className="min-h-screen flex items-center justify-center bg-slate-50">
-          <div className="w-8 h-8 border-4 border-pink-600 border-t-transparent rounded-full animate-spin" />
+          <div className="w-8 h-8 border-4 border-royal-600 border-t-transparent rounded-full animate-spin" />
         </div>
       }
     >
